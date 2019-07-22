@@ -59,6 +59,8 @@ public class AppController {
     
     @RequestMapping(method = RequestMethod.GET)
     public String index(ModelMap model) {
+        String page="welcomepage.jsp";      //might want to make a PageParameter Class.
+        model.addAttribute("page", page);
         return "index";
     }
     
