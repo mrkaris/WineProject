@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="com.mycompany_TheWineProject_war_1.0PU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>com.mycompany.thewineproject.models.Country</class>
+    <class>com.mycompany.thewineproject.models.Colour</class>
+    <class>com.mycompany.thewineproject.models.Role</class>
+    <class>com.mycompany.thewineproject.models.User</class>
+    <class>com.mycompany.thewineproject.models.Product</class>
+    <class>com.mycompany.thewineproject.models.Variety</class>
+    <class>com.mycompany.thewineproject.models.PersistentLogins</class>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://ra1.anystream.eu:1011/SPLLOK?zeroDateTimeBehavior=convertToNull"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="aDifficultPassword$"/>
+    </properties>
+  </persistence-unit>
+</persistence>
