@@ -111,9 +111,7 @@ public class AppController {
             result.addError(ssoError);
             return "registration";
         }
-        System.out.println("YOOOOOOOOOOOOOOOOOOOO");
         userService.saveUser(user);
-        System.out.println("HIIIIIIIIIIIIIIIIII");
  
         model.addAttribute("success", "User " + user.getFirstName() + " "+ user.getLastName() + " registered successfully");
         model.addAttribute("loggedinuser", getPrincipal());
