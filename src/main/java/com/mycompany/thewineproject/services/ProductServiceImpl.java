@@ -47,6 +47,7 @@ public class ProductServiceImpl implements ProductService{
             entity.setPsize(product.getPsize());
             entity.setPyear(product.getPyear());
             entity.setVid(product.getVid());
+            entity.setImage(product.getImage());
 
         }
     }

@@ -77,6 +77,9 @@ public class Product implements Serializable {
     @Size(max = 50)
     @Column(length = 50)
     private String pcompany;
+    @Size(max = 255)
+    @Column(length = 255)
+    private String image;
     @JoinColumn(name = "vid", referencedColumnName = "vid")
     @ManyToOne()
     private Variety vid;
@@ -94,12 +97,13 @@ public class Product implements Serializable {
         this.pid = pid;
     }
 
-    public Product(Integer pid, int pyear, String pname, int psize, int palcohol) {
+    public Product(Integer pid, int pyear, String pname, int psize, int palcohol, String image) {
         this.pid = pid;
         this.pyear = pyear;
         this.pname = pname;
         this.psize = psize;
         this.palcohol = palcohol;
+        this.image = image;
     }
 
     public Integer getPid() {
@@ -157,6 +161,16 @@ public class Product implements Serializable {
     public void setPdescr(String pdescr) {
         this.pdescr = pdescr;
     }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+    
+    
 
     public Double getPprice() {
         return pprice;

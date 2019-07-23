@@ -34,7 +34,7 @@
 
         <%@include file="header.jsp" %>
 
-        <div class="main-container">}
+        <div class="main-container">
             <c:import url="${page}" />
         </div>
 
