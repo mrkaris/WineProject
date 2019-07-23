@@ -15,8 +15,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -29,17 +27,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 @Table(name="product",catalog = "SPLLOK", schema = "")
 @XmlRootElement
-@NamedQueries({
-    @NamedQuery(name = "Product.findAll", query = "SELECT p FROM Product p")
-    , @NamedQuery(name = "Product.findByPid", query = "SELECT p FROM Product p WHERE p.pid = :pid")
-    , @NamedQuery(name = "Product.findByPyear", query = "SELECT p FROM Product p WHERE p.pyear = :pyear")
-    , @NamedQuery(name = "Product.findByPname", query = "SELECT p FROM Product p WHERE p.pname = :pname")
-    , @NamedQuery(name = "Product.findByPsize", query = "SELECT p FROM Product p WHERE p.psize = :psize")
-    , @NamedQuery(name = "Product.findByPdryness", query = "SELECT p FROM Product p WHERE p.pdryness = :pdryness")
-    , @NamedQuery(name = "Product.findByPalcohol", query = "SELECT p FROM Product p WHERE p.palcohol = :palcohol")
-    , @NamedQuery(name = "Product.findByPdescr", query = "SELECT p FROM Product p WHERE p.pdescr = :pdescr")
-    , @NamedQuery(name = "Product.findByPprice", query = "SELECT p FROM Product p WHERE p.pprice = :pprice")
-    , @NamedQuery(name = "Product.findByPcompany", query = "SELECT p FROM Product p WHERE p.pcompany = :pcompany")})
 public class Product implements Serializable {
 
     private static final long serialVersionUID = 1L;

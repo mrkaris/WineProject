@@ -14,8 +14,6 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
@@ -29,10 +27,6 @@ import javax.xml.bind.annotation.XmlTransient;
 @Entity
 @Table(name="country",catalog = "SPLLOK", schema = "")
 @XmlRootElement
-@NamedQueries({
-    @NamedQuery(name = "Country.findAll", query = "SELECT c FROM Country c")
-    , @NamedQuery(name = "Country.findByCid", query = "SELECT c FROM Country c WHERE c.cid = :cid")
-    , @NamedQuery(name = "Country.findByCdescr", query = "SELECT c FROM Country c WHERE c.cdescr = :cdescr")})
 public class Country implements Serializable {
 
     private static final long serialVersionUID = 1L;

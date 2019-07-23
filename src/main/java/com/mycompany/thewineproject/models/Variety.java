@@ -14,25 +14,16 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
-/**
- *
- * @author George
- */
+
 @Entity
 @Table(name="variety",catalog = "SPLLOK", schema = "")
 @XmlRootElement
-@NamedQueries({
-    @NamedQuery(name = "Variety.findAll", query = "SELECT v FROM Variety v")
-    , @NamedQuery(name = "Variety.findByVid", query = "SELECT v FROM Variety v WHERE v.vid = :vid")
-    , @NamedQuery(name = "Variety.findByVdescr", query = "SELECT v FROM Variety v WHERE v.vdescr = :vdescr")})
 public class Variety implements Serializable {
 
     private static final long serialVersionUID = 1L;
