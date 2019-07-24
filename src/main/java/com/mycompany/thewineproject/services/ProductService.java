@@ -24,4 +24,9 @@ public interface ProductService {
 
     List<Product> findAllProduct();
 
+    List<Product> findByCountry(int cid) ;
+    
+    List<Product> findByVariety(int cid) ;
+    
+    List<Product> findByColour(int cid) ;
 }

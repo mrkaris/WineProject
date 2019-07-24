@@ -42,7 +42,21 @@ public class ProductDaoImpl extends AbstractDao<Integer, Product> implements Pro
     @Override
     public List<Product> findByCountry(int cid){
         Criteria criteria = createEntityCriteria();
-        criteria.add(Restrictions.eq("cid", cid));
+        criteria.add(Restrictions.eq("cid.cid", cid));
+        return (List<Product>) criteria.list();
+    }
+    
+    @Override
+    public List<Product> findByVariety(int vid){
+        Criteria criteria = createEntityCriteria();
+        criteria.add(Restrictions.eq("vid.vid", vid));
+        return (List<Product>) criteria.list();
+    }
+    
+    @Override
+    public List<Product> findByColour(int clid){
+        Criteria criteria = createEntityCriteria();
+        criteria.add(Restrictions.eq("clid.clid", clid));
         return (List<Product>) criteria.list();
     }
     
