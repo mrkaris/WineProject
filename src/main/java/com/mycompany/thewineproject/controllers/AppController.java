@@ -119,7 +119,7 @@ public class AppController {
         model.addAttribute("user", user);
         model.addAttribute("edit", false);
         model.addAttribute("loggedinuser", getPrincipal());
-        return "registration";
+        return "registeruser";
     }
  
     /**
@@ -131,7 +131,7 @@ public class AppController {
             ModelMap model) {
         
         if (result.hasErrors()) {
-            return "registration";
+            return "registeruser";
         }
         /*
          * Preferred way to achieve uniqueness of field [sso] should be implementing custom @Unique annotation 
@@ -144,7 +144,7 @@ public class AppController {
         if(!userService.isUserSSOUnique(user.getId(), user.getSsoId())){
             FieldError ssoError =new FieldError("user","ssoId",messageSource.getMessage("non.unique.ssoId", new String[]{user.getSsoId()}, Locale.getDefault()));
             result.addError(ssoError);
-            return "registration";
+            return "registeruser";
         }
         userService.saveUser(user);
  
@@ -164,7 +164,7 @@ public class AppController {
         model.addAttribute("user", user);
         model.addAttribute("edit", true);
         model.addAttribute("loggedinuser", getPrincipal());
-        return "registration";
+        return "registeruser";
     }
      
     /**
@@ -176,7 +176,7 @@ public class AppController {
             ModelMap model, @PathVariable String ssoId) {
  
         if (result.hasErrors()) {
-            return "registration";
+            return "registeruser";
         }
  
         /*//Uncomment below 'if block' if you WANT TO ALLOW UPDATING SSO_ID in UI which is a unique key to a User.
@@ -231,7 +231,7 @@ public class AppController {
         if (isCurrentAuthenticationAnonymous()) {
             return "login";
         } else {
-            return "redirect:/list";  
+            return "redirect:/";  
         }
     }
  

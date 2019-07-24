@@ -36,8 +36,8 @@
 
         <%@include file="header.jsp" %>
 
-        <div class="main-container">
-            <div class="generic-container overflow">
+        <div class="main-container overflow-auto">
+            <div class="generic-container">
                 <%@include file="authheader.jsp" %>   
                 <div class="panel panel-default">
                     <!-- Default panel contents -->
@@ -66,10 +66,10 @@
                                     <td>${user.adress}</td>
                                     <td>${user.ssoId}</td>
                                     <sec:authorize access="hasRole('ADMIN') or hasRole('DBA')">
-                                        <td><a href="<c:url value='/edit-user-${user.ssoId}' />" class="btn btn-success custom-width">edit</a></td>
+                                        <td><a href="<c:url value='/edit-user-${user.ssoId}' />" class="btn-sm btn-success">edit</a></td>
                                     </sec:authorize>
                                     <sec:authorize access="hasRole('ADMIN')">
-                                        <td><a href="<c:url value='/delete-user-${user.ssoId}' />" class="btn btn-danger custom-width">delete</a></td>
+                                        <td><a href="<c:url value='/delete-user-${user.ssoId}' />" class="btn-sm btn-danger custom-width">delete</a></td>
                                     </sec:authorize>
                                 </tr>
                             </c:forEach>
