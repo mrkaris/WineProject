@@ -18,4 +18,6 @@ public interface ProductDao {
 
     List<Product> findAllProducts();
 
+    List<Product> findByCountry(int cid) ;
+    
 }

@@ -8,6 +8,7 @@ package com.mycompany.thewineproject.daos;
 import com.mycompany.thewineproject.models.Product;
 import java.util.List;
 import org.hibernate.Criteria;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -37,4 +38,13 @@ public class ProductDaoImpl extends AbstractDao<Integer, Product> implements Pro
         return (List<Product>) criteria.list();
     }
 
+    
+    @Override
+    public List<Product> findByCountry(int cid){
+        Criteria criteria = createEntityCriteria();
+        criteria.add(Restrictions.eq("cid", cid));
+        return (List<Product>) criteria.list();
+    }
+    
+    
 }
