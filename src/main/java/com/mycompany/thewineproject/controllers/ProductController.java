@@ -7,25 +7,30 @@ import com.mycompany.thewineproject.services.ProductService;
 import java.util.List;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/product")
+@SessionAttributes("roles")
 public class ProductController {
 
     @Autowired
     ProductService service;
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)
     public String findAllProducts(ModelMap model) {
         List<Product> products = service.findAllProduct();
         model.addAttribute("products", products);
-        return "";
+        model.addAttribute("loggedinuser", getPrincipal());
+        return "productlist";
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
@@ -72,5 +77,17 @@ public class ProductController {
         service.updateProduct(product);
         return "";
     }
+        private String getPrincipal(){
+        String userName = null;
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        
+        if (principal instanceof UserDetails) {
+            userName = ((UserDetails)principal).getUsername();
+        } else {
+            userName = principal.toString();
+        }
+        return userName;
+    }
+     
 
 }
