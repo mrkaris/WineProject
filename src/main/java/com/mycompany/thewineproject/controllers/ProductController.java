@@ -73,4 +73,10 @@ public class ProductController {
         return "";
     }
 
+    @RequestMapping(value = "product/countr/{cid}", method = RequestMethod.GET)
+    public String findByCountry(ModelMap model,@PathVariable("cid") int cid) {
+        List<Product> products = service.findByCountry(cid);
+        model.addAttribute("products", products);
+        return "";
+    }
 }
