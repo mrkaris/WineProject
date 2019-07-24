@@ -1,6 +1,7 @@
 
 package com.mycompany.thewineproject.controllers;
 
+import com.mycompany.thewineproject.models.Product;
 import java.util.List;
 import java.util.Locale;
  
@@ -27,6 +28,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
  
 import com.mycompany.thewineproject.models.User;
 import com.mycompany.thewineproject.models.UserProfile;
+import com.mycompany.thewineproject.services.ProductService;
 import com.mycompany.thewineproject.services.UserProfileService;
 import com.mycompany.thewineproject.services.UserService;
  
@@ -45,6 +47,9 @@ public class AppController {
      
     @Autowired
     MessageSource messageSource;
+    
+    @Autowired
+    ProductService service;
  
     @Autowired
     PersistentTokenBasedRememberMeServices persistentTokenBasedRememberMeServices;
@@ -94,8 +99,10 @@ public class AppController {
     
     @RequestMapping(value = { "/wines" }, method = RequestMethod.GET)
     public String wines(ModelMap model) {
+        List<Product> products = service.findAllProduct();
         String page="wines.jsp"; 
         model.addAttribute("page", page);
+        model.addAttribute("products", products);
         return "index";
     }
     
