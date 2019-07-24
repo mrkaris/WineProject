@@ -54,6 +54,8 @@
                                 <th>Description</th>
                                 <th>Price</th>
                                 <th>Country</th>
+                                <th>Variety</th>
+                                <th>Colour</th>
                                     <sec:authorize access="hasRole('ADMIN') or hasRole('DBA')">
                                     <th width="100"></th>
                                     </sec:authorize>
@@ -75,6 +77,9 @@
                                     <td>${item.pdescr}</td>
                                     <td>${item.pprice} EUR</td>
                                     <td>${item.cid.cdescr}</td>
+                                    <td>${item.vid.vdescr}</td>
+                                    <td>${item.clid.cldescr}</td>
+                                    
                                     <sec:authorize access="hasRole('ADMIN') or hasRole('DBA')">
                                         <td><a href="<c:url value='/edit-product-${item.pid}' />" class="btn btn-success custom-width">edit</a></td>
                                     </sec:authorize>
