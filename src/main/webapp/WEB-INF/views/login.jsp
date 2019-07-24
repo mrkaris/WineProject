@@ -36,9 +36,9 @@
         <%@include file="header.jsp" %>
 
         <div class="main-container">
-            <div id="mainWrapper">
-                <div class="login-container">
-                    <div class="login-card">
+            <div class="container">
+                <div class="login-container" style="margin: 40px; display: flex; align-items: center; justify-content: center;">
+                    <div class="col-md-4 login-card">
                         <div class="login-form">
                             <c:url var="loginUrl" value="/login" />
                             <form action="${loginUrl}" method="post" class="form-horizontal">
