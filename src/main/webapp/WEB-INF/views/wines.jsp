@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div class="main-container">
     <section class="team-1">
         <div class="container">
@@ -12,60 +15,28 @@
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-md-2 col-sm-4">
-                    <div class="team-1-member">
-                        <img alt="Team Member" class="background-image" src="static/img/wine_1.png ">
-                        <h5>Chardonnay</h5>
-                        <span>Lorem ipsum</span><br>
-
+            <c:forEach items="${products}" var="item">
+                <div class="card d-inline-block h-50 m-4" style="width: 24.5rem; background-color:white; border-color: #a6a6a6;">
+                    <img class="card-img-top mt-2" style="display: block; margin-left: auto; margin-right: auto; width: 18%;" 
+                    src="https://d.scdn.gr/images/sku_main_images/004709/4709792/20181008092249_moet_chandon_brut_imperial_leyko_750ml.jpeg" alt="Card image cap">
+                    <div class="card-body">
+                        <h3 class="card-title font-weight-bold align-vertical" style="font-family: '${item.pname}', 
+                                                                serif;font-style: italic;font-weight: 400;">${item.pname}</h3>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item" style="background-color:#f2f2f2; border-color: #a6a6a6;"><p class="card-text">${item.vid.vdescr}</p></li>
+                        <li class="list-group-item " style="background-color:#f2f2f2; border-color: #a6a6a6;"><p class="card-text">Colour: ${item.clid.cldescr}</p></li>
+                        <li class="list-group-item" style="background-color:#f2f2f2; border-color: #a6a6a6;"><p class="card-text">Price: ${item.pprice} EUR</p></li>
+                    </ul>
+                    <div class="card-body" style="background-color:#f2f2f2; border-color: #a6a6a6;">
+<!--                        <a href="#" class="card-link float-right">Buy</a>
+                        <a href="#" class="card-link float-left">View</a>-->
+                        <button type="button" class="btn btn-primary btn-md float-center btn-block">View</button>
+                        <button type="button" class="btn btn-secondary btn-md float-center btn-block">Buy</button>
+                        
                     </div>
                 </div>
-                <div class="col-md-2 col-sm-4">
-                    <div class="team-1-member">
-                        <img alt="Team Member" class="background-image" src="static/img/wine_2.png ">
-                        <h5>Merlot</h5>
-                        <span>Dolor Sit</span><br>
-
-                    </div>
-                </div>
-                <div class="col-md-2 col-sm-4">
-                    <div class="team-1-member">
-                        <img alt="Team Member" class="background-image" src="static/img/wine_3.png ">
-                        <h5>Pinot Noir</h5>
-                        <span>Modi tempora </span><br>
-
-                    </div>
-                </div>
-                <div class="col-md-2 col-sm-4">
-                    <div class="team-1-member">
-                        <img alt="Team Member" class="background-image" src="static/img/wine_4.png ">
-                        <h5>Chenin Blanc</h5>
-                        <span>Magnam aliquam</span><br>
-
-                    </div>
-                </div>
-                <div class="col-md-2 col-sm-4">
-                    <div class="team-1-member">
-                        <img alt="Team Member" class="background-image" src="static/img/wine_5.png ">
-                        <h5> Nebbiolo</h5>
-                        <span>Ipsum quia</span><br>
-
-                    </div>
-                </div>
-                <div class="col-md-2 col-sm-4">
-                    <div class="team-1-member">
-                        <img alt="Team Member" class="background-image" src="static/img/wine_6.png ">
-                        <h5>Cabernet Franc</h5>
-                        <span>Numquam eius</span><br>
-
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
+            </c:forEach>
 
     <section class="duplicatable-content pure-text">
         <div class="container">
