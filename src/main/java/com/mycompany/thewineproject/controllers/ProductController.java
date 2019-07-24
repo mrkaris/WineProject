@@ -37,7 +37,7 @@ public class ProductController {
     public String findById(ModelMap model, @PathVariable("id") int id) {
         Product p = service.findById(id);
         model.addAttribute("product", p);
-        return "";
+        return "productlist";
     }
 
     @RequestMapping(value = "/insert", method = RequestMethod.GET)
@@ -90,4 +90,28 @@ public class ProductController {
     }
      
 
+    @RequestMapping(value = "/country/{cid}", method = RequestMethod.GET)
+    public String findByCountry(ModelMap model,@PathVariable("cid") int cid) {
+        List<Product> products = service.findByCountry(cid);
+        
+        model.addAttribute("products", products);
+        
+        model.addAttribute("loggedinuser", getPrincipal());
+        return "productlist";
+    }
+    
+    @RequestMapping(value = "/variety/{vid}", method = RequestMethod.GET)
+    public String findByVariety(ModelMap model,@PathVariable("vid") int vid) {
+        List<Product> products = service.findByVariety(vid);
+        model.addAttribute("products", products);
+        
+        return "productlist";
+    }
+    
+    @RequestMapping(value = "/colour/{clid}", method = RequestMethod.GET)
+    public String findByColour(ModelMap model,@PathVariable("clid") int clid) {
+        List<Product> products = service.findByCountry(clid);
+        model.addAttribute("products", products);
+        return "productlist";
+    }
 }

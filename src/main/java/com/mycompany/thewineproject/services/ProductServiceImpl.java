@@ -62,4 +62,18 @@ public class ProductServiceImpl implements ProductService{
         return dao.findAllProducts();
     }
 
+    @Override
+    public List<Product> findByCountry(int cid){
+        return dao.findByCountry(cid);
+    }
+    
+    @Override
+    public List<Product> findByVariety(int vid){
+        return dao.findByVariety(vid);
+    }
+    
+    @Override
+    public List<Product> findByColour(int clid){
+        return dao.findByColour(clid);
+    }
 }
