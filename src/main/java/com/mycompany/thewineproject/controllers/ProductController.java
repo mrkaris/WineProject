@@ -37,7 +37,7 @@ public class ProductController {
     public String findById(ModelMap model, @PathVariable("id") int id) {
         Product p = service.findById(id);
         model.addAttribute("product", p);
-        return "productlist";
+        return "";
     }
 
     @RequestMapping(value = "/insert", method = RequestMethod.GET)
@@ -110,7 +110,7 @@ public class ProductController {
     
     @RequestMapping(value = "/colour/{clid}", method = RequestMethod.GET)
     public String findByColour(ModelMap model,@PathVariable("clid") int clid) {
-        List<Product> products = service.findByCountry(clid);
+        List<Product> products = service.findByColour(clid);
         model.addAttribute("products", products);
         return "productlist";
     }
