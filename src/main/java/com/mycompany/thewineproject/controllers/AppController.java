@@ -64,6 +64,41 @@ public class AppController {
         return "index";
     }
     
+    @RequestMapping(value = { "/home" }, method = RequestMethod.GET)
+    public String home(ModelMap model) {
+        String page="welcomepage.jsp";      //might want to make a PageParameter Class.
+        model.addAttribute("page", page);
+        return "index";
+    }
+    
+    @RequestMapping(value = { "/about" }, method = RequestMethod.GET)
+    public String about(ModelMap model) {
+        String page="about.jsp";      
+        model.addAttribute("page", page);
+        return "index";
+    }
+    
+    @RequestMapping(value = { "/contact" }, method = RequestMethod.GET)
+    public String contact(ModelMap model) {
+        String page="contact.jsp";  
+        model.addAttribute("page", page);
+        return "index";
+    }
+    
+    @RequestMapping(value = { "/process" }, method = RequestMethod.GET)
+    public String process(ModelMap model) {
+        String page="process.jsp";
+        model.addAttribute("page", page);
+        return "index";
+    }
+    
+    @RequestMapping(value = { "/wines" }, method = RequestMethod.GET)
+    public String wines(ModelMap model) {
+        String page="wines.jsp"; 
+        model.addAttribute("page", page);
+        return "index";
+    }
+    
     @RequestMapping(value = { "/list" }, method = RequestMethod.GET)
     public String listUsers(ModelMap model) {
  
