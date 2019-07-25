@@ -21,11 +21,11 @@ public class VarietyController {
     @Autowired
     VarietyService service;
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)
     public String findAllVarieties(ModelMap model) {
         List<Variety> varieties = service.findAllVarieties();
         model.addAttribute("varieties", varieties);
-        return "";
+        return "viewvarieties";
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
@@ -39,38 +39,38 @@ public class VarietyController {
     public String insertForm(ModelMap model) {
         Variety variety = new Variety();
         model.addAttribute("variety", variety);
-        return "";
+        return "registervariety";
     }
 
     @RequestMapping(value = "/insert", method = RequestMethod.POST)
     public String saveVariety(@Valid Variety variety, BindingResult result, ModelMap model) {
         if (result.hasErrors()) {
-            return "";
+            return "registervariety";
         }
         service.saveVariety(variety);
-        return "";
+        return "adminhome";
     }
 
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
     public String deleteVarietyById(ModelMap model, @PathVariable("id") int id) {
         service.deleteVarietyById(id);
-        return "";
+        return "adminhome";
     }
 
     @RequestMapping(value = "/update/{id}", method = RequestMethod.GET)
     public String updateById(ModelMap model, @PathVariable("id") int id) {
         model.addAttribute("variety", service.findById(id));
-        return "";
+        return "registervariety";
     }
 
-    @RequestMapping(value = "/update", method = RequestMethod.POST)
+    @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
     public String updateVariety(@Valid Variety variety, BindingResult result, ModelMap model) {
         if (result.hasErrors()) {
             int id = variety.getVid();
             return "update/{" + id + "}";
         }
         service.updateVariety(variety);
-        return "";
+        return "adminhome";
     }
 
 }

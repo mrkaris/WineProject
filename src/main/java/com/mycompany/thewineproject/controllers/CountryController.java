@@ -19,11 +19,11 @@ public class CountryController {
     @Autowired
     CountryService service;
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)
     public String findAllCountries(ModelMap model) {
         List<Country> countries = service.findAllCountries();
         model.addAttribute("countries", countries);
-        return "";
+        return "viewcountries";
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
@@ -37,38 +37,38 @@ public class CountryController {
     public String insertForm(ModelMap model) {
         Country country = new Country();
         model.addAttribute("country", country);
-        return "";
+        return "registercountry";
     }
 
     @RequestMapping(value = "/insert", method = RequestMethod.POST)
     public String saveCountry(@Valid Country country, BindingResult result, ModelMap model) {
         if (result.hasErrors()) {
-            return "";
+            return "registercountry";
         }
         service.saveCountry(country);
-        return "";
+        return "adminhome";
     }
 
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
     public String deleteCountryById(ModelMap model, @PathVariable("id") int id) {
         service.deleteCountryById(id);
-        return "";
+        return "adminhome";
     }
 
     @RequestMapping(value = "/update/{id}", method = RequestMethod.GET)
     public String updateById(ModelMap model, @PathVariable("id") int id) {
         model.addAttribute("country", service.findById(id));
-        return "";
+        return "registercountry";
     }
 
-    @RequestMapping(value = "/update", method = RequestMethod.POST)
+    @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
     public String updateBrand(@Valid Country country, BindingResult result, ModelMap model) {
         if (result.hasErrors()) {
             int id = country.getCid();
             return "update/{" + id + "}";
         }
         service.updateCountry(country);
-        return "";
+        return "adminhome";
     }
 
 }

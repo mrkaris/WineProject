@@ -20,11 +20,11 @@ public class ColourController {
     @Autowired
     ColourService service;
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)
     public String findAllColours(ModelMap model) {
         List<Colour> colours = service.findAllColours();
         model.addAttribute("colours", colours);
-        return "";
+        return "viewcolours";
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
@@ -38,38 +38,38 @@ public class ColourController {
     public String insertForm(ModelMap model) {
         Colour colour = new Colour();
         model.addAttribute("colour", colour);
-        return "";
+        return "registercolour";
     }
 
     @RequestMapping(value = "/insert", method = RequestMethod.POST)
     public String saveColour(@Valid Colour colour, BindingResult result, ModelMap model) {
         if (result.hasErrors()) {
-            return "";
+            return "registercolour";
         }
         service.saveColour(colour);
-        return "";
+        return "adminhome";
     }
 
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
     public String deleteColourById(ModelMap model, @PathVariable("id") int id) {
         service.deleteColourById(id);
-        return "";
+        return "adminhome";
     }
 
     @RequestMapping(value = "/update/{id}", method = RequestMethod.GET)
     public String updateById(ModelMap model, @PathVariable("id") int id) {
         model.addAttribute("colour", service.findById(id));
-        return "";
+        return "registercolour";
     }
 
-    @RequestMapping(value = "/update", method = RequestMethod.POST)
+    @RequestMapping(value = "/update{id}", method = RequestMethod.POST)
     public String updateColour(@Valid Colour colour, BindingResult result, ModelMap model) {
         if (result.hasErrors()) {
             int id = colour.getClid();
             return "update/{" + id + "}";
         }
         service.updateColour(colour);
-        return "";
+        return "adminhome";
     }
 
 }

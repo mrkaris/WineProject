@@ -37,54 +37,29 @@
         <%@include file="header.jsp" %>
 
         <div class="main-container overflow-auto">
-            <div class="container ">
+            <div class="generic-container ">
                 <%@include file="authheader.jsp" %>   
                 <div class="panel panel-default">
                     <!-- Default panel contents -->
-                    <div class="panel-heading"><span class="lead">List of Products </span></div>
+                    <div class="panel-heading"><span class="lead">List of Colours</span></div>
                     <table class="table table-hover">
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Year</th>
-                                <th>Name</th>
-                                <th>Size</th>
-                                <th>Alcohol</th>
-                                <th>Dryness</th>
                                 <th>Description</th>
-                                <th>Price</th>
-                                <th>Country</th>
-                                <th>Variety</th>
-                                <th>Colour</th>
-                                    <sec:authorize access="hasRole('ADMIN') or hasRole('DBA')">
-                                    <th width="100"></th>
-                                    </sec:authorize>
-                                    <sec:authorize access="hasRole('ADMIN')">
-                                    <th width="100"></th>
-                                    </sec:authorize>
 
                             </tr>
                         </thead>
                         <tbody>
-                            <c:forEach items="${products}" var="item">
+                            <c:forEach items="${colours}" var="item">
                                 <tr>
-                                    <td>${item.pid}</td>
-                                    <td>${item.pyear}</td>
-                                    <td>${item.pname}</td>
-                                    <td>${item.psize}ml</td>
-                                    <td>${item.palcohol}%</td>
-                                    <td>${item.pdryness}</td>
-                                    <td>${item.pdescr}</td>
-                                    <td>${item.pprice} EUR</td>
-                                    <td>${item.cid.cdescr}</td>
-                                    <td>${item.vid.vdescr}</td>
-                                    <td>${item.clid.cldescr}</td>
-                                    
+                                    <td>${item.clid}</td>
+                                    <td>${item.cldescr}</td>
                                     <sec:authorize access="hasRole('ADMIN') or hasRole('DBA')">
-                                        <td><a href="<c:url value='/edit-product-${item.pid}' />" class="btn-sm btn-success">edit</a></td>
+                                        <td><a href="<c:url value='/colour/update/${item.clid}' />" class="btn-sm btn-success">edit</a></td>
                                     </sec:authorize>
                                     <sec:authorize access="hasRole('ADMIN')">
-                                        <td><a href="<c:url value='/delete-product-${item.pid}' />" class="btn-sm btn-danger custom-width">delete</a></td>
+                                        <td><a href="<c:url value='colour/delete/${item.clid}' />" class="btn-sm btn-danger custom-width">delete</a></td>
                                     </sec:authorize>
                                 </tr>
                             </c:forEach>
@@ -93,7 +68,7 @@
                 </div>
                 <sec:authorize access="hasRole('ADMIN')">
                     <div class="well">
-                        <a href="<c:url value='/newproduct' />">Add New Product</a>
+                        <a href="<c:url value='/colour/insert' />">Add New Colour</a>
                     </div>
                 </sec:authorize>
             </div>
