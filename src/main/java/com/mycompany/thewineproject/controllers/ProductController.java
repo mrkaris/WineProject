@@ -2,8 +2,14 @@
 package com.mycompany.thewineproject.controllers;
 
 
+import com.mycompany.thewineproject.models.Colour;
+import com.mycompany.thewineproject.models.Country;
 import com.mycompany.thewineproject.models.Product;
+import com.mycompany.thewineproject.models.Variety;
+import com.mycompany.thewineproject.services.ColourService;
+import com.mycompany.thewineproject.services.CountryService;
 import com.mycompany.thewineproject.services.ProductService;
+import com.mycompany.thewineproject.services.VarietyService;
 import java.util.List;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +30,15 @@ public class ProductController {
 
     @Autowired
     ProductService service;
+    
+    @Autowired
+    VarietyService vservice;
+    
+    @Autowired
+    ColourService clservice;
+    
+    @Autowired
+    CountryService cservice;
 
     @RequestMapping(method = RequestMethod.GET)
     public String findAllProducts(ModelMap model) {
@@ -43,17 +58,27 @@ public class ProductController {
     @RequestMapping(value = "/insert", method = RequestMethod.GET)
     public String insertForm(ModelMap model) {
         Product product = new Product();
+        List <Variety> varieties = vservice.findAllVarieties();
+        List <Colour> colours = clservice.findAllColours();
+        List <Country> countries = cservice.findAllCountries();
+        
         model.addAttribute("product", product);
-        return "";
+        model.addAttribute("varieties",varieties);
+        model.addAttribute("colours",colours);
+        model.addAttribute("countries",countries);
+        model.addAttribute("edit", false);
+        return "registerproduct";
     }
 
     @RequestMapping(value = "/insert", method = RequestMethod.POST)
-    public String saveProduct(@Valid Product product, BindingResult result, ModelMap model) {
+    public String insertForm(@Valid Product product, BindingResult result, ModelMap model) {
+        
         if (result.hasErrors()) {
             return "";
         }
+        
         service.saveProduct(product);
-        return "";
+        return "admin";
     }
 
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
