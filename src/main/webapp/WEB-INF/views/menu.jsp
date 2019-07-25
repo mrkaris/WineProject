@@ -3,11 +3,11 @@
     <div class="col-sm-12 columns text-center">
         <ul class="menu">
             <a></a>
-            <li><a href="home" target="_self">Home</a></li>
-            <li><a href="about" target="_self">About us</a></li>
-            <li><a href="process" target="_self">Process</a></li>
-            <li><a href="wines" target="_self">Our wines </a></li>
-            <li><a href="contact" target="_self">Contact</a></li>
+            <li><a href="${pageContext.request.contextPath}/home" target="_self">Home</a></li>
+            <li><a href="${pageContext.request.contextPath}/about" target="_self">About us</a></li>
+            <li><a href="${pageContext.request.contextPath}/process" target="_self">Process</a></li>
+            <li><a href="${pageContext.request.contextPath}/wines" target="_self">Our wines </a></li>
+            <li><a href="${pageContext.request.contextPath}/contact" target="_self">Contact</a></li>
             <c:choose>
                 <c:when test="${pageContext.request.isUserInRole('ADMIN') 
                                 or pageContext.request.isUserInRole('USER') 

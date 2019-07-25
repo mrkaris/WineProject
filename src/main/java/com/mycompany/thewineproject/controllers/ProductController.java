@@ -78,7 +78,7 @@ public class ProductController {
         }
         
         service.saveProduct(product);
-        return "admin";
+        return "adminhome";
     }
 
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
