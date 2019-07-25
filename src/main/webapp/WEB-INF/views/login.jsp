@@ -23,9 +23,9 @@
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700%7CRaleway:700'
               rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-        <script src="static/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script src="${pageContext.request.contextPath}static/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
         <link href="http://fonts.googleapis.com/css?family=Cardo:400,400italic" rel="stylesheet" type="text/css">
-        <link href="static/css/font-cardo.css" rel="stylesheet" type="text/css">
+        <link href="${pageContext.request.contextPath}static/css/font-cardo.css" rel="stylesheet" type="text/css">
     <body>
         <div class="loader">
             <div class="spinner">
@@ -35,7 +35,10 @@
         </div>
 
         <%@include file="header.jsp" %>
-
+        <br>
+        <br>
+        <br>
+        <br>
         <div class="main-container">
             <div class="container">
                 <div class="login-container" style="margin: 40px; display: flex; align-items: center; justify-content: center;">
@@ -69,6 +72,7 @@
                                 <input type="hidden" name="${_csrf.parameterName}"  value="${_csrf.token}" />
 
                                 <div class="form-actions">
+                                    <br>
                                     <input type="submit"
                                            class="btn btn-block btn-primary btn-default" value="Log in"> or 
                                     <a href="<c:url value='/newuser' />">Create Account</a>
@@ -79,9 +83,8 @@
                 </div>
             </div>
         </div>
-
-        <%@include file="footer.jsp" %>
-
+      <div style="position: absolute; bottom: 0; width: 100%; height: 2.5rem; "><%@include file="footer.jsp" %>
+      </div>
 
         <script src="https://www.youtube.com/iframe_api"></script>
         <script src="${pageContext.request.contextPath}/static/js/jquery.min.js"></script>

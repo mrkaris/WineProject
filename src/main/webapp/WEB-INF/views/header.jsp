@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-sm-12 text-center">
                     <a href="${pageContext.request.contextPath}/">
-                        <img class="logo logo-dark" alt="Logo" src="static/img/logotype_dark.png">
+                        <img class="logo logo-dark" alt="Logo" src="${pageContext.request.contextPath}/static/img/logotype_dark.png">
                 </div>
             </div>
 

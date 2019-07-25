@@ -89,4 +89,5 @@
     </div>
   </div>
 </div>
-<script>$('.filter-basic').mdbFilter();</script>
+
+<script type="text/javascript">$('.filter-basic').mdbFilter();</script>

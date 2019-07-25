@@ -23,9 +23,9 @@
                 <![endif]-->
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700%7CRaleway:700'
               rel='stylesheet' type='text/css'>
-        <script src="static/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script src="${pageContext.request.contextPath}static/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
         <link href="http://fonts.googleapis.com/css?family=Cardo:400,400italic" rel="stylesheet" type="text/css">
-        <link href="static/css/font-cardo.css" rel="stylesheet" type="text/css">
+        <link href="${pageContext.request.contextPath}static/css/font-cardo.css" rel="stylesheet" type="text/css">
     <body>
         <div class="loader">
             <div class="spinner">

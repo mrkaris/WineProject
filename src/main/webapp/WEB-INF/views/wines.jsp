@@ -6,11 +6,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2 text-center">
-                    <h1>Meet collection of our wines</h1>
+                    <h1>Meet the collection of our wines</h1>
                     <p class="lead">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-                        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat.
+                        At our Vineyards and Winery, our tasting room is always open for wine tastings. 
+                        Escape out to the beautiful Iowa countryside and enjoy sampling our wines to know exactly 
+                        what your preferences are. Whether you are a novice or experienced wine drinker, 
+                        our knowledgeable staff will guide you in discovering Tabor wines. We have a range of 
+                        wines to please any wine drinker, including reds and whites. 
+                        All of our wines are available to buy. Read the descriptions below to find 
+                        the perfect one for you! 
                     </p>
                 </div>
             </div>

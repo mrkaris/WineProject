@@ -36,7 +36,7 @@
         </div>
 
         <%@include file="header.jsp" %>
-
+        <br>
         <div class="main-container">
             <div class="container">
                 <%@include file="authheader.jsp" %>
@@ -148,8 +148,8 @@
             </div>
         </div>
 
-        <%@include file="footer.jsp" %>
-
+    <div style="position: absolute; bottom: 0; width: 100%; height: 2.5rem; "><%@include file="footer.jsp" %>
+    </div>
 
         <script src="https://www.youtube.com/iframe_api"></script>
         <script src="${pageContext.request.contextPath}/static/js/jquery.min.js"></script>
