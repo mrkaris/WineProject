@@ -69,6 +69,12 @@ public class AppController {
         return "index";
     }
     
+    @RequestMapping(value = { "/admin" }, method = RequestMethod.GET)
+    public String adminHome(ModelMap model) {
+        model.addAttribute("loggedinuser", getPrincipal());
+        return "adminhome";
+    }
+    
     @RequestMapping(value = { "/home" }, method = RequestMethod.GET)
     public String home(ModelMap model) {
         String page="welcomepage.jsp";      //might want to make a PageParameter Class.

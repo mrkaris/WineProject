@@ -5,7 +5,7 @@
 
             <div class="row">
                 <div class="col-sm-12 text-center">
-                    <a href="index.jsp">
+                    <a href="${pageContext.request.contextPath}/">
                         <img class="logo logo-dark" alt="Logo" src="static/img/logotype_dark.png">
                 </div>
             </div>
