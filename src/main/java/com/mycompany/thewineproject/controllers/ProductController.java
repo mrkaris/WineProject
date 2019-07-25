@@ -33,11 +33,11 @@ public class ProductController {
         return "productlist";
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "view/{id}", method = RequestMethod.GET)
     public String findById(ModelMap model, @PathVariable("id") int id) {
         Product p = service.findById(id);
         model.addAttribute("product", p);
-        return "";
+        return "wineById";
     }
 
     @RequestMapping(value = "/insert", method = RequestMethod.GET)

@@ -106,6 +106,15 @@ public class AppController {
         return "index";
     }
     
+    @RequestMapping(value = { "/wines/country" }, method = RequestMethod.GET)
+    public String winesCountry(ModelMap model) {
+        List<Product> products = service.findAllProduct();
+        String page="wines.jsp"; 
+        model.addAttribute("page", page);
+        model.addAttribute("products", products);
+        return "wineByCountry";
+    }
+    
     @RequestMapping(value = { "/list" }, method = RequestMethod.GET)
     public String listUsers(ModelMap model) {
  
