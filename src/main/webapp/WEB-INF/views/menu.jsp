@@ -8,6 +8,7 @@
             <li><a href="process" target="_self">Process</a></li>
             <li><a href="wines" target="_self">Our wines </a></li>
             <li><a href="contact" target="_self">Contact</a></li>
+            <li><a href="login" target="_self">Login</a></li>
             <sec:authorize access="hasAnyRole('ADMIN') or hasRole('DBA')">
                 <li><a href="adminHome.jsp" target="_self">Admin</a></li>
             </sec:authorize>

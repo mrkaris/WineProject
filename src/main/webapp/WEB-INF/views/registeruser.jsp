@@ -38,7 +38,7 @@
         <%@include file="header.jsp" %>
 
         <div class="main-container">
-            <div class="generic-container">
+            <div class="container">
                 <%@include file="authheader.jsp" %>
 
                 <div class="well lead">User Registration Form</div>
