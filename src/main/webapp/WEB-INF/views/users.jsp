@@ -47,8 +47,9 @@
                             <tr>
                                 <th>Firstname</th>
                                 <th>Lastname</th>
+                                <th>address</th>
                                 <th>Email</th>
-                                <th>SSO ID</th>
+
                                     <sec:authorize access="hasRole('ADMIN') or hasRole('DBA')">
                                     <th width="100"></th>
                                     </sec:authorize>
