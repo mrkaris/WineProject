@@ -60,6 +60,8 @@ public class ProductController {
         List<Colour> colours = clservice.findAllColours();
         List<Country> countries = cservice.findAllCountries();
 
+
+
         model.addAttribute("product", product);
         model.addAttribute("varieties", varieties);
         model.addAttribute("colours", colours);
