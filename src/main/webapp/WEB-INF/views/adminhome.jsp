@@ -26,6 +26,7 @@
         <script src="${pageContext.request.contextPath}static/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
         <link href="http://fonts.googleapis.com/css?family=Cardo:400,400italic" rel="stylesheet" type="text/css">
         <link href="${pageContext.request.contextPath}static/css/font-cardo.css" rel="stylesheet" type="text/css">
+    </head>
     <body>
         <div class="loader">
             <div class="spinner">
@@ -35,6 +36,7 @@
         </div>
 
         <%@include file="header.jsp" %>
+
 
         <div class="main-container overflow-auto">
             <div class="generic-container">
@@ -76,7 +78,7 @@
                 <script src="${pageContext.request.contextPath}/static/js/jquery.plugin.min.js"></script>
                 <script src="${pageContext.request.contextPath}/static/js/bootstrap.min.js"></script>
                 <script src="${pageContext.request.contextPath}/static/js/jquery.flexslider-min.js"></script>
-                <script src="${pageContext.request.contextPath}/${pageContext.request.contextPath}/static/js/smooth-scroll.min.js"></script>
+                <script src="${pageContext.request.contextPath}/static/js/smooth-scroll.min.js"></script>
                 <script src="${pageContext.request.contextPath}/static/js/skrollr.min.js"></script>
                 <script src="${pageContext.request.contextPath}/static/js/spectragram.min.js"></script>
                 <script src="${pageContext.request.contextPath}/static/js/scrollReveal.min.js"></script>
