@@ -41,7 +41,7 @@
         <div class="main-container overflow-auto">
             <div class="generic-container">
                 <%@include file="authheader.jsp" %>   
-                <div class="panel panel-default">
+                <div class="container panel panel-default">
                     <!-- Default panel contents -->
                     <div class="panel-heading"><span class="lead">Admin Homepage </span></div>
                     <table class="table table-hover">
