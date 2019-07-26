@@ -38,7 +38,7 @@
         <%@include file="header.jsp" %>
 
         <div class="main-container">
-            <div class="generic-container">
+            <div class="container">
                 <%@include file="authheader.jsp" %>
 
                 <div class="well lead">Product Registration Form</div>
@@ -156,7 +156,7 @@
 
                     <div class="row">
                         <div class="form-group col-md-12">
-                            <label class="col-md-3 control-lable" for="cid">countries</label>
+                            <label class="col-md-3 control-lable" for="cid">Countries</label>
                             <div class="col-md-7">
                                 <form:select path="cid.cid"  items="${countries}"  itemValue="cid" itemLabel="cdescr" class="form-control input-sm" />
                                 <div class="has-error">
