@@ -93,7 +93,7 @@
                 </div>
                 <sec:authorize access="hasRole('ADMIN')">
                     <div class="well">
-                        <a href="<c:url value='/newproduct' />">Add New Product</a>
+                        <a href="<c:url value='/product/insert' />">Add New Product</a>
                     </div>
                 </sec:authorize>
             </div>
