@@ -37,7 +37,7 @@
         <%@include file="header.jsp" %>
 
         <div class="main-container overflow-auto">
-            <div class="generic-container ">
+            <div class="container ">
                 <%@include file="authheader.jsp" %>   
                 <div class="panel panel-default">
                     <!-- Default panel contents -->

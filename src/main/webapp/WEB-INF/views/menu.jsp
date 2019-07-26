@@ -8,6 +8,9 @@
             <li><a href="${pageContext.request.contextPath}/process" target="_self">Process</a></li>
             <li><a href="${pageContext.request.contextPath}/wines" target="_self">Our wines </a></li>
             <li><a href="${pageContext.request.contextPath}/contact" target="_self">Contact</a></li>
+            <sec:authorize access="hasAnyRole('ADMIN') or hasRole('DBA')">
+                <li><a href="<c:url value='/admin' />" target="_self">Admin</a></li>
+            </sec:authorize>            
             <c:choose>
                 <c:when test="${pageContext.request.isUserInRole('ADMIN') 
                                 or pageContext.request.isUserInRole('USER') 
@@ -18,10 +21,6 @@
                     <li><a href="${pageContext.request.contextPath}/login" target="_self">Login</a></li>
                 </c:otherwise>
             </c:choose>
-            <sec:authorize access="hasAnyRole('ADMIN') or hasRole('DBA')">
-                <li><a href="<c:url value='/admin' />" target="_self">Admin</a></li>
-            </sec:authorize>
-
         </ul>
     </div>
 </div>

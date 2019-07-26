@@ -5,6 +5,8 @@ import com.mycompany.thewineproject.services.CountryService;
 import java.util.List;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -46,13 +48,18 @@ public class CountryController {
             return "registercountry";
         }
         service.saveCountry(country);
-        return "adminhome";
+        model.addAttribute("success", "Country " + country.getCdescr() + " registered successfully");
+        model.addAttribute("loggedinuser", getPrincipal());
+        return "registrationsuccess";
     }
 
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
     public String deleteCountryById(ModelMap model, @PathVariable("id") int id) {
         service.deleteCountryById(id);
-        return "adminhome";
+        model.addAttribute("success", "Country deleted successfully");
+        model.addAttribute("loggedinuser", getPrincipal());
+        return "registrationsuccess";
+
     }
 
     @RequestMapping(value = "/update/{id}", method = RequestMethod.GET)
@@ -68,7 +75,21 @@ public class CountryController {
             return "update/{" + id + "}";
         }
         service.updateCountry(country);
-        return "adminhome";
+        model.addAttribute("success", "Country " + country.getCdescr() + " updated successfully");
+        model.addAttribute("loggedinuser", getPrincipal());
+        return "registrationsuccess";
+    }
+
+    private String getPrincipal() {
+        String userName = null;
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+        if (principal instanceof UserDetails) {
+            userName = ((UserDetails) principal).getUsername();
+        } else {
+            userName = principal.toString();
+        }
+        return userName;
     }
 
 }

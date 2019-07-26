@@ -5,7 +5,7 @@
  */
 package com.mycompany.thewineproject.services;
 
-import com.mycompany.thewineproject.daos.ColourDao;
+
 import com.mycompany.thewineproject.daos.ProductDao;
 import com.mycompany.thewineproject.models.Product;
 import java.util.List;

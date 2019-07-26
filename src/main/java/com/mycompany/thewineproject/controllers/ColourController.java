@@ -1,4 +1,3 @@
-
 package com.mycompany.thewineproject.controllers;
 
 import com.mycompany.thewineproject.models.Colour;
@@ -6,6 +5,8 @@ import com.mycompany.thewineproject.services.ColourService;
 import java.util.List;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -47,13 +48,17 @@ public class ColourController {
             return "registercolour";
         }
         service.saveColour(colour);
-        return "adminhome";
+        model.addAttribute("success", "Colour " + colour.getCldescr() + " registered successfully");
+        model.addAttribute("loggedinuser", getPrincipal());
+        return "registrationsuccess";
     }
 
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
     public String deleteColourById(ModelMap model, @PathVariable("id") int id) {
         service.deleteColourById(id);
-        return "adminhome";
+        model.addAttribute("success", "Colour deleted successfully");
+        model.addAttribute("loggedinuser", getPrincipal());
+        return "registrationsuccess";
     }
 
     @RequestMapping(value = "/update/{id}", method = RequestMethod.GET)
@@ -69,7 +74,21 @@ public class ColourController {
             return "update/{" + id + "}";
         }
         service.updateColour(colour);
-        return "adminhome";
+        model.addAttribute("success", "Colour " + colour.getCldescr() + " updated successfully");
+        model.addAttribute("loggedinuser", getPrincipal());
+        return "registrationsuccess";
+    }
+
+    private String getPrincipal() {
+        String userName = null;
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+        if (principal instanceof UserDetails) {
+            userName = ((UserDetails) principal).getUsername();
+        } else {
+            userName = principal.toString();
+        }
+        return userName;
     }
 
 }

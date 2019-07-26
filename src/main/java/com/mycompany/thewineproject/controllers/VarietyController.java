@@ -1,12 +1,12 @@
-
 package com.mycompany.thewineproject.controllers;
-
 
 import com.mycompany.thewineproject.models.Variety;
 import com.mycompany.thewineproject.services.VarietyService;
 import java.util.List;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -48,13 +48,17 @@ public class VarietyController {
             return "registervariety";
         }
         service.saveVariety(variety);
-        return "adminhome";
+        model.addAttribute("success", "Variety " + variety.getVdescr() + " registered successfully");
+        model.addAttribute("loggedinuser", getPrincipal());
+        return "registrationsuccess";
     }
 
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
     public String deleteVarietyById(ModelMap model, @PathVariable("id") int id) {
         service.deleteVarietyById(id);
-        return "adminhome";
+        model.addAttribute("success", "Variety deleted successfully");
+        model.addAttribute("loggedinuser", getPrincipal());
+        return "registrationsuccess";
     }
 
     @RequestMapping(value = "/update/{id}", method = RequestMethod.GET)
@@ -70,7 +74,21 @@ public class VarietyController {
             return "update/{" + id + "}";
         }
         service.updateVariety(variety);
-        return "adminhome";
+        model.addAttribute("success", "Variety " + variety.getVdescr() + " updated successfully");
+        model.addAttribute("loggedinuser", getPrincipal());
+        return "registrationsuccess";
+    }
+
+    private String getPrincipal() {
+        String userName = null;
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+        if (principal instanceof UserDetails) {
+            userName = ((UserDetails) principal).getUsername();
+        } else {
+            userName = principal.toString();
+        }
+        return userName;
     }
 
 }
