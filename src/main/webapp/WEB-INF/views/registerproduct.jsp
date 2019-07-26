@@ -85,7 +85,15 @@
                         <div class="form-group col-md-12">
                             <label class="col-md-3 control-lable" for="pdryness">Product Dryness</label>
                             <div class="col-md-7">
-                                <form:input type="text" path="pdryness" id="pdryness" class="form-control input-sm"/>
+
+                                <form:select path="pdryness" id="pdryness" class= "form-control input-sm ">
+
+                                    <form:option value="Dry">Dry</form:option>
+                                    <form:option value="Semi-Dry">Semi-Dry</form:option>
+                                    <form:option value="Sweet">Sweet</form:option>
+                                    <form:option value="Semi-Sweet">Semi-Sweet</form:option>
+                                </form:select>
+
                                 <div class="has-error">
                                     <form:errors path="pdryness" class="help-inline"/>
                                 </div>
