@@ -93,8 +93,8 @@
                                 <div class="feature-text">
                                     <h6>Well Known Around The World</h6>
                                     <p>
-                                        Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit
-                                        quo minus.
+                                        Our wine promoted to the iDealwine community of 500,000 
+                                        grand cru lovers from 120 countries. 
                                     </p>
                                 </div>
                             </div>
