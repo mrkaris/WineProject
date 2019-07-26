@@ -78,7 +78,7 @@
                                     <h6>Great Taste</h6>
                                     <p>
                                         Wine tastings are held all year round. There is no need to book; just ask us 
-                                        about our Taste when you?re here, and enjoy the tasting in our bar 
+                                        about our Taste when you are here, and enjoy the tasting in our bar 
                                         or even at your table over lunch or dinner. 
                                     </p>
                                 </div>
