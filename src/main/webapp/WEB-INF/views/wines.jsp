@@ -18,7 +18,7 @@
                     </p>
                 </div>
             </div>
-
+<%@include file="wineByCountry.jsp" %>
             <c:forEach items="${products}" var="item">
                 <div class="card d-inline-block h-50 m-4" style="width: 24.5rem; background-color:white; border-color: #a6a6a6;">
                     <img class="card-img-top mt-2" style="display: block; margin-left: auto; margin-right: auto; width: 18%;" 

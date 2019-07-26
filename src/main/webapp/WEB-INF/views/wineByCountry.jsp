@@ -1,93 +1,59 @@
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<div class="filter filter-basic">
-  <div class="filter-nav">
-    <button class="btn btn-success active" data-filter="">All</button>
-    <button class="btn btn-primary" data-filter="nature">Nature</button>
-    <button class="btn btn-primary" data-filter="food">Food</button>
-    <button class="btn btn-primary" data-filter="architecture">Architecture</button>
-  </div>
-  <div class="filter-gallery">
-    <div class="item" data-category="nature">
-      <div class="item-content">
-        <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(30).jpg" alt="image">
-      </div>
-    </div>
-    <div class="item" data-category="architecture">
-      <div class="item-content">
-        <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(1).jpg" alt="image">
-      </div>
-    </div>
-    <div class="item" data-category="food">
-      <div class="item-content">
-        <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(42).jpg" alt="image">
-      </div>
-    </div>
-    <div class="item" data-category="architecture">
-      <div class="item-content">
-        <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(2).jpg" alt="image">
-      </div>
-    </div>
-    <div class="item" data-category="nature">
-      <div class="item-content">
-        <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(114).jpg" alt="image">
-      </div>
-    </div>
-    <div class="item" data-category="architecture">
-      <div class="item-content">
-        <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(4).jpg" alt="image">
-      </div>
-    </div>
-    <div class="item" data-category="architecture">
-      <div class="item-content">
-        <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(6).jpg" alt="image">
-      </div>
-    </div>
-    <div class="item" data-category="nature">
-      <div class="item-content">
-        <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(115).jpg" alt="image">
-      </div>
-    </div>
-    <div class="item" data-category="food">
-      <div class="item-content">
-        <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(44).jpg" alt="image">
-      </div>
-    </div>
-    <div class="item" data-category="architecture">
-      <div class="item-content">
-        <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(5).jpg" alt="image">
-      </div>
-    </div>
-    <div class="item" data-category="food">
-      <div class="item-content">
-        <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(45).jpg" alt="image">
-      </div>
-    </div>
-    <div class="item" data-category="food">
-      <div class="item-content">
-        <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(46).jpg" alt="image">
-      </div>
-    </div>
-    <div class="item" data-category="food">
-      <div class="item-content">
-        <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(47).jpg" alt="image">
-      </div>
-    </div>
-    <div class="item" data-category="nature">
-      <div class="item-content">
-        <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(111).jpg" alt="image">
-      </div>
-    </div>
-    <div class="item" data-category="architecture">
-      <div class="item-content">
-        <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(3).jpg" alt="image">
-      </div>
-    </div>
-    <div class="item" data-category="nature">
-      <div class="item-content">
-        <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(112).jpg" alt="image">
-      </div>
-    </div>
-  </div>
-</div>
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>-->
 
-<script type="text/javascript">$('.filter-basic').mdbFilter();</script>
+<div class="container m-2 col-sm-12">
+    <form>
+    <div class="form-group" style="align-content: center; margin: auto;">
+      <h2 style="float: left; margin: 0px 0px; display: inline; height: 30px;">Filter by country:</h2>
+      <select class="form-control" style="float: left; width: 180px; margin-left:20px; display: inline; height: 30px;" id="sel1">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+      </select>
+      <a class="btn btn-primary" style="float: left; text-align: center; margin: 0px 5px; width: 25px; display: inline; height: 30px;" 
+      	 href="#" role="button">Go</a>
+    </div>
+  </form>
+</div>
+    <div class="container m-2 col-sm-12">
+    <form>
+    <div class="form-group" style="align-content: center;">
+      <h2 style="float: left; margin: 0px 0px; display: inline; height: 30px;">Filter by color:</h2>
+      <select class="form-control" style="float: left; width: 180px; margin-left:20px; display: inline; height: 30px;" id="sel1">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+      </select>
+      <a class="btn btn-primary" style="float: left; text-align: center; margin: 0px 5px; width: 25px; display: inline; height: 30px;" 
+      	 href="#" role="button">Go</a>
+    </div>
+  </form>
+    </div>
+        <div class="container m-2 col-sm-12">
+    <form>
+    <div class="form-group" style="align-content: center;">
+      <h2 style="float: left; margin: 0px 0px; display: inline; height: 30px;">Filter by variety:</h2>
+      <select class="form-control" style="float: left; width: 180px; margin-left:20px; display: inline; height: 30px;" id="sel1">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+      </select>
+      <a class="btn btn-primary" style="float: left; text-align: center; margin: 0px 5px; width: 25px; display: inline; height: 30px;" 
+      	 href="#" role="button">Go</a>
+    </div>
+  </form>
+</div>
+<!--</body>
+</html>-->
