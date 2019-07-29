@@ -60,8 +60,6 @@ public class ProductController {
         List<Colour> colours = clservice.findAllColours();
         List<Country> countries = cservice.findAllCountries();
 
-
-
         model.addAttribute("product", product);
         model.addAttribute("varieties", varieties);
         model.addAttribute("colours", colours);
@@ -134,25 +132,50 @@ public class ProductController {
     @RequestMapping(value = "/country/{cid}", method = RequestMethod.GET)
     public String findByCountry(ModelMap model, @PathVariable("cid") int cid) {
         List<Product> products = service.findByCountry(cid);
-
+        List<Colour> colours = clservice.findAllColours();
+        List<Country> countries = cservice.findAllCountries();
+        List<Variety> varieties = vservice.findAllVarieties();
+        String page = "wines.jsp";
+        model.addAttribute("page", page);
+        model.addAttribute("colours", colours);
+        model.addAttribute("countries", countries);
+        model.addAttribute("varieties", varieties);
         model.addAttribute("products", products);
-
         model.addAttribute("loggedinuser", getPrincipal());
-        return "productlist";
+        return "index";
     }
 
     @RequestMapping(value = "/variety/{vid}", method = RequestMethod.GET)
     public String findByVariety(ModelMap model, @PathVariable("vid") int vid) {
         List<Product> products = service.findByVariety(vid);
         model.addAttribute("products", products);
-
-        return "productlist";
+        List<Colour> colours = clservice.findAllColours();
+        List<Country> countries = cservice.findAllCountries();
+        List<Variety> varieties = vservice.findAllVarieties();
+        String page = "wines.jsp";
+        model.addAttribute("page", page);
+        model.addAttribute("colours", colours);
+        model.addAttribute("countries", countries);
+        model.addAttribute("varieties", varieties);
+        model.addAttribute("products", products);
+        model.addAttribute("loggedinuser", getPrincipal());
+        return "index";
     }
 
     @RequestMapping(value = "/colour/{clid}", method = RequestMethod.GET)
     public String findByColour(ModelMap model, @PathVariable("clid") int clid) {
         List<Product> products = service.findByColour(clid);
         model.addAttribute("products", products);
-        return "productlist";
+        List<Colour> colours = clservice.findAllColours();
+        List<Country> countries = cservice.findAllCountries();
+        List<Variety> varieties = vservice.findAllVarieties();
+        String page = "wines.jsp";
+        model.addAttribute("page", page);
+        model.addAttribute("colours", colours);
+        model.addAttribute("countries", countries);
+        model.addAttribute("varieties", varieties);
+        model.addAttribute("products", products);
+        model.addAttribute("loggedinuser", getPrincipal());
+        return "index";
     }
 }

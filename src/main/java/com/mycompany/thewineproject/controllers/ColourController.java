@@ -64,10 +64,11 @@ public class ColourController {
     @RequestMapping(value = "/update/{id}", method = RequestMethod.GET)
     public String updateById(ModelMap model, @PathVariable("id") int id) {
         model.addAttribute("colour", service.findById(id));
+        model.addAttribute("edit", true);
         return "registercolour";
     }
 
-    @RequestMapping(value = "/update{id}", method = RequestMethod.POST)
+    @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
     public String updateColour(@Valid Colour colour, BindingResult result, ModelMap model) {
         if (result.hasErrors()) {
             int id = colour.getClid();

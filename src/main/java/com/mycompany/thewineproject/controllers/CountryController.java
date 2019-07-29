@@ -65,6 +65,7 @@ public class CountryController {
     @RequestMapping(value = "/update/{id}", method = RequestMethod.GET)
     public String updateById(ModelMap model, @PathVariable("id") int id) {
         model.addAttribute("country", service.findById(id));
+        model.addAttribute("edit", true);
         return "registercountry";
     }
 

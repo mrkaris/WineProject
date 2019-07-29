@@ -56,10 +56,10 @@
                                     <td>${item.vid}</td>
                                     <td>${item.vdescr}</td>
                                     <sec:authorize access="hasRole('ADMIN') or hasRole('DBA')">
-                                        <td><a href="<c:url value='/variety/update/${item.vid}' />" class="btn-sm btn-success">edit</a></td>
+                                        <td><a href="<c:url value='/variety/update/${item.vid}' />" class="btn-sm btn-success" style="padding: 7px 18px; border-radius: 14px;">edit</a></td>
                                     </sec:authorize>
                                     <sec:authorize access="hasRole('ADMIN')">
-                                        <td><a href="<c:url value='variety/delete/${item.vid}' />" class="btn-sm btn-danger custom-width">delete</a></td>
+                                        <td><a href="<c:url value='variety/delete/${item.vid}' />" class="btn-sm btn-danger custom-width" style="padding: 7px 18px; border-radius: 14px;">delete</a></td>
                                     </sec:authorize>
                                 </tr>
                             </c:forEach>
@@ -68,7 +68,7 @@
                 </div>
                 <sec:authorize access="hasRole('ADMIN')">
                     <div class="well">
-                        <a href="<c:url value='/variety/insert' />">Add New Variety</a>
+                        <a class="btn btn-primary" id="myAdd" href="<c:url value='/variety/insert' />">Add New Variety</a>
                     </div>
                 </sec:authorize>
             </div>

@@ -114,7 +114,7 @@ h5 {
   </a>
    <div class="dropdown-container" style="display: none;">
        <c:forEach items="${countries}" var="country">
-      <a href="${pageContext.request.contextPath}/product/colour/${country.cid}"><h5>${country.cdescr}</h5></a>
+      <a href="${pageContext.request.contextPath}/product/country/${country.cid}"><h5>${country.cdescr}</h5></a>
     </c:forEach>
   </div>
    <a class="dropdown-btn">Color
@@ -122,7 +122,7 @@ h5 {
   </a>
   <div class="dropdown-container" style="display: none;">
       <c:forEach items="${colours}" var="colour">
-      <a href="#"><h5>${colour.cldescr}</h5></a>
+      <a href="${pageContext.request.contextPath}/product/colour/${colour.clid}"><h5>${colour.cldescr}</h5></a>
     </c:forEach>
   </div>
    <a class="dropdown-btn">Variety
@@ -130,7 +130,7 @@ h5 {
   </a>
   <div class="dropdown-container" style="display: none;">
       <c:forEach items="${varieties}" var="variety">
-      <a href="#"><h5>${variety.vdescr}</h5></a>
+      <a href="${pageContext.request.contextPath}/product/variety/${variety.vid}"><h5>${variety.vdescr}</h5></a>
     </c:forEach>
   </div>
 </div>

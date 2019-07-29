@@ -40,6 +40,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
+                .antMatchers("/product/country/{cid}","/product/colour/{clid}","/product/variety/{vid}").permitAll()
                 .antMatchers("/product/view/{id}").permitAll()
                 .antMatchers("/country/**", "/variety/**", "/colour/**", "/product/**")
                 .access("hasRole('ADMIN') or hasRole('DBA')")

@@ -56,10 +56,10 @@
                                     <td>${item.cid}</td>
                                     <td>${item.cdescr}</td>
                                     <sec:authorize access="hasRole('ADMIN') or hasRole('DBA')">
-                                        <td><a href="<c:url value='/country/update/${item.cid}' />" class="btn-sm btn-success">edit</a></td>
+                                        <td><a href="<c:url value='/country/update/${item.cid}' />" class="btn-sm btn-success" style="padding: 7px 18px; border-radius: 14px;">edit</a></td>
                                     </sec:authorize>
                                     <sec:authorize access="hasRole('ADMIN')">
-                                        <td><a href="<c:url value='country/delete/${item.cid}' />" class="btn-sm btn-danger custom-width">delete</a></td>
+                                        <td><a href="<c:url value='country/delete/${item.cid}' />" class="btn-sm btn-danger custom-width" style="padding: 7px 18px; border-radius: 14px;">delete</a></td>
                                     </sec:authorize>
                                 </tr>
                             </c:forEach>
@@ -68,7 +68,7 @@
                 </div>
                 <sec:authorize access="hasRole('ADMIN')">
                     <div class="well">
-                        <a href="<c:url value='/country/insert' />">Add New Country</a>
+                        <a class="btn btn-primary" id="myAdd" href="<c:url value='/country/insert' />">Add New Country</a>
                     </div>
                 </sec:authorize>
             </div>
