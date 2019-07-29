@@ -1,6 +1,8 @@
 
 package com.mycompany.thewineproject.controllers;
 
+import com.mycompany.thewineproject.models.Colour;
+import com.mycompany.thewineproject.models.Country;
 import com.mycompany.thewineproject.models.Product;
 import java.util.List;
 import java.util.Locale;
@@ -28,9 +30,13 @@ import org.springframework.web.bind.annotation.SessionAttributes;
  
 import com.mycompany.thewineproject.models.User;
 import com.mycompany.thewineproject.models.UserProfile;
+import com.mycompany.thewineproject.models.Variety;
+import com.mycompany.thewineproject.services.ColourService;
+import com.mycompany.thewineproject.services.CountryService;
 import com.mycompany.thewineproject.services.ProductService;
 import com.mycompany.thewineproject.services.UserProfileService;
 import com.mycompany.thewineproject.services.UserService;
+import com.mycompany.thewineproject.services.VarietyService;
  
  
  
@@ -50,6 +56,15 @@ public class AppController {
     
     @Autowired
     ProductService service;
+    
+    @Autowired
+    ColourService colourService;
+    
+    @Autowired
+    CountryService countryService;
+    
+    @Autowired
+    VarietyService varietyService;
  
     @Autowired
     PersistentTokenBasedRememberMeServices persistentTokenBasedRememberMeServices;
@@ -106,8 +121,14 @@ public class AppController {
     @RequestMapping(value = { "/wines" }, method = RequestMethod.GET)
     public String wines(ModelMap model) {
         List<Product> products = service.findAllProduct();
+        List<Colour> colours = colourService.findAllColours();
+        List<Country> countries = countryService.findAllCountries();
+        List<Variety> varieties = varietyService.findAllVarieties();
         String page="wines.jsp"; 
         model.addAttribute("page", page);
+        model.addAttribute("colours", colours);
+        model.addAttribute("countries", countries);
+        model.addAttribute("varieties", varieties);
         model.addAttribute("products", products);
         return "index";
     }

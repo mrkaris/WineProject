@@ -9,16 +9,16 @@
                     <h1>Meet the collection of our wines</h1>
                     <p class="lead">
                         At our Vineyards and Winery, our tasting room is always open for wine tastings. 
-                        Escape out to the beautiful Iowa countryside and enjoy sampling our wines to know exactly 
+                        Escape out to the beautiful countryside and enjoy sampling our wines to know exactly 
                         what your preferences are. Whether you are a novice or experienced wine drinker, 
                         our knowledgeable staff will guide you in discovering Tabor wines. We have a range of 
                         wines to please any wine drinker, including reds and whites. 
                         All of our wines are available to buy. Read the descriptions below to find 
-                        the perfect one for you! 
+                        the perfect one!
                     </p>
                 </div>
             </div>
-<%@include file="wineByCountry.jsp" %>
+            <%@include file="filters.jsp" %>
             <c:forEach items="${products}" var="item">
                 <div class="card d-inline-block h-50 m-4" style="width: 24.5rem; background-color:white; border-color: #a6a6a6;">
                     <img class="card-img-top mt-2" style="display: block; margin-left: auto; margin-right: auto; width: 18%;" 
@@ -41,7 +41,7 @@
                     </div>
                 </div>
             </c:forEach>
-            
+
             <section class="duplicatable-content pure-text">
                 <div class="container">
                     <div class="row">
