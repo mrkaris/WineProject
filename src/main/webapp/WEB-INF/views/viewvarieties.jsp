@@ -38,7 +38,6 @@
 
         <div class="main-container overflow-auto">
             <div class="container ">
-                <%@include file="authheader.jsp" %>   
                 <div class="panel panel-default">
                     <!-- Default panel contents -->
                     <div class="panel-heading"><span class="lead">List of Varieties</span></div>

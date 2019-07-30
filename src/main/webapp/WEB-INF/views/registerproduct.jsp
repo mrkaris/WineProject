@@ -39,8 +39,6 @@
 
         <div class="main-container">
             <div class="container">
-                <%@include file="authheader.jsp" %>
-
                 <div class="well lead">Product Registration Form</div>
                 <form:form method="POST" modelAttribute="product" class="form-horizontal">
                     <form:input type="hidden" path="pid" id="pid"/>

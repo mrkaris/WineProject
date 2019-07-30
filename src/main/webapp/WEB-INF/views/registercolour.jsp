@@ -39,8 +39,6 @@
 
         <div class="main-container">
             <div class="container">
-                <%@include file="authheader.jsp" %>
-
                 <div class="well lead">Colour Registration Form</div>
                 <form:form method="POST" modelAttribute="colour" class="form-horizontal">
                     <form:input type="hidden" path="clid" id="id"/>

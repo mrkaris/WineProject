@@ -39,8 +39,6 @@
         <br>
         <div class="main-container">
             <div class="container">
-                <%@include file="authheader.jsp" %>
-
                 <div class="well lead">User Registration Form</div>
                 <form:form method="POST" modelAttribute="user" class="form-horizontal">
                     <form:input type="hidden" path="id" id="id"/>
@@ -75,7 +73,7 @@
                             <div class="col-md-7">
                                 <c:choose>
                                     <c:when test="${edit}">
-                                        <form:input type="text" path="ssoId" id="ssoId" class="form-control input-sm" disabled="true"/>
+                                        <form:input type="text" path="ssoId" id="ssoId" class="form-control input-sm" readonly="true"/>
                                     </c:when>
                                     <c:otherwise>
                                         <form:input type="text" path="ssoId" id="ssoId" class="form-control input-sm" />
