@@ -134,7 +134,16 @@
                         <div class="form-actions floatRight">
                             <c:choose>
                                 <c:when test="${edit}">
-                                    <input type="submit" id="myAdd" value="Update" class="btn btn-primary btn-sm"/> or <a href="<c:url value='/' />">Cancel</a>
+                                    <input type="submit" id="myAdd" value="Update" class="btn btn-primary btn-sm"/> or 
+                                    <c:choose>
+                                        <c:when test="${pageContext.request.isUserInRole('ADMIN')
+                                                      or pageContext.request.isUserInRole('DBA')}">
+                                    <a href="<c:url value='/admin' />">Cancel</a>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <a href="<c:url value='/' />">Cancel</a>
+                                    </c:otherwise>
+                                    </c:choose>
                                 </c:when>
                                 <c:otherwise>
                                     <input type="submit" id="myAdd" value="Register" class="btn btn-primary btn-sm"/> or <a href="<c:url value='/' />">Cancel</a>
