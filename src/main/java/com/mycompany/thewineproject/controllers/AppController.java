@@ -210,6 +210,7 @@ public class AppController {
 
     @RequestMapping(value = {"/edituserinfo"}, method = RequestMethod.GET)
     public String editUserInfo(ModelMap model) {
+        model.addAttribute("loggedinuser", getPrincipal());
         if(isCurrentAuthenticationAnonymous()){
             return "accessDenied";
         }
@@ -217,7 +218,6 @@ public class AppController {
         User user = userService.findBySSO(ssoid);
         model.addAttribute("user", user);
         model.addAttribute("edit", true);
-        model.addAttribute("loggedinuser", getPrincipal());
         return "registeruser";
     }
 
