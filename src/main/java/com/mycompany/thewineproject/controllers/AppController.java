@@ -33,14 +33,19 @@ import com.mycompany.thewineproject.models.Variety;
 import com.mycompany.thewineproject.services.ColourService;
 import com.mycompany.thewineproject.services.CountryService;
 import com.mycompany.thewineproject.services.ProductService;
+import com.mycompany.thewineproject.services.SecurityService;
 import com.mycompany.thewineproject.services.UserProfileService;
 import com.mycompany.thewineproject.services.UserService;
 import com.mycompany.thewineproject.services.VarietyService;
+import org.springframework.stereotype.Service;
 
 @Controller
 @RequestMapping("/")
 @SessionAttributes("roles")
 public class AppController {
+
+    @Autowired
+    SecurityService securityService;
 
     @Autowired
     UserService userService;
@@ -189,6 +194,9 @@ public class AppController {
             return "registeruser";
         }
         userService.saveUser(user);
+        if (isCurrentAuthenticationAnonymous()) {
+            securityService.autologin(user);
+        }
 
         model.addAttribute("success", "User " + user.getFirstName() + " " + user.getLastName() + " registered successfully");
         model.addAttribute("loggedinuser", getPrincipal());
@@ -211,7 +219,7 @@ public class AppController {
     @RequestMapping(value = {"/edituserinfo"}, method = RequestMethod.GET)
     public String editUserInfo(ModelMap model) {
         model.addAttribute("loggedinuser", getPrincipal());
-        if(isCurrentAuthenticationAnonymous()){
+        if (isCurrentAuthenticationAnonymous()) {
             return "accessDenied";
         }
         String ssoid = getPrincipal();
@@ -269,9 +277,12 @@ public class AppController {
      * This method will delete an user by it's SSOID value.
      */
     @RequestMapping(value = {"/delete-user-{ssoId}"}, method = RequestMethod.GET)
-    public String deleteUser(@PathVariable String ssoId) {
+    public String deleteUser(@PathVariable String ssoId, ModelMap model) {
+        model.addAttribute("success", userService.findBySSO(ssoId).getSsoId()+" deleted successfully");
         userService.deleteUserBySSO(ssoId);
-        return "redirect:/list";
+
+//        return "redirect:/list";
+        return "registrationsuccess";
     }
 
     /**

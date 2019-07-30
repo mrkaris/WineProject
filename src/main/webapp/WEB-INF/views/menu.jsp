@@ -22,8 +22,8 @@
                 </c:otherwise>
             </c:choose>
         </ul>
-                <div style="float:right; margin-top: 1%">
-                    <%@include file="authheader.jsp"%>
-                </div>
+        <div style="float:right; margin-top: 1%">
+            <%@include file="authheader.jsp"%>
+        </div>
     </div>
 </div>
