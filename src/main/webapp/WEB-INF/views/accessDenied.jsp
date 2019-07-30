@@ -5,6 +5,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
         <title>AccessDenied page</title>
+        <link href="${pageContext.request.contextPath}/static/css/bootstrap.css" rel="stylesheet"></link>
+        <link href="${pageContext.request.contextPath}/static/css/app.css" rel="stylesheet"></link>
     </head>
     <body>
         <div class="generic-container">
