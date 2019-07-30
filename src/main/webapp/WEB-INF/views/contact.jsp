@@ -1,9 +1,17 @@
 <div class="main-container">
     <section class="map">
-        <div class="map-holder">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25198.35985697838!2d144.979258257672!3d-37.86508725777717!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad6686626d1c9bf%3A0x24b207169447a3a5!2sClyde+St%2C+St+Kilda+VIC+3182!5e0!3m2!1sen!2sau!4v1405983906843"></iframe>
+        <div class="map-holder" style="margin-left: 5.7%; margin-right:  5.7%; margin-top: 40px;">
+            <div class="mapouter">
+                <div class="gmap_canvas">
+                    <iframe width="800" height="600" id="gmap_canvas" src="https://maps.google.com/maps?q=nemea&t=&z=11&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                    <a href="https://www.embedgooglemap.net/blog/best-wordpress-themes/">Winery</a>
+                </div>
+                <style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:550px;width:1200px;}
+                </style>
+            </div>
         </div>
     </section>
+    
 
     <section class="contact-center">
         <div class="container">
@@ -11,8 +19,8 @@
                 <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 text-center">
                     <h1>Have questions? <br>Maybe you want just to try our wines?<br></h1>
                     <p class="lead">contact@winery.com
-                        <br>+80 984 349 492<br>
-                        <br>Best Winery<br>200 Provence-Alpes,&nbsp;France</p>
+                        <br>+30 27460 00 000<br>
+                        <br>Winery<br>Nemea, 205 00, &nbsp;Greece</p>
                 </div><div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
                     <div class="form-wrapper clearfix">
                         <form class="form-contact email-form">
