@@ -45,28 +45,29 @@
         <c:set var="product" value="${product}" />
         <div class="container" >
             <div style="display:inline;">
-        <img class="card-img-top mt-2" style="float: left; width: 120px; text-align: right; margin: 5px 130px; display: inline;" 
-             src="https://d.scdn.gr/images/sku_main_images/004709/4709792/20181008092249_moet_chandon_brut_imperial_leyko_750ml.jpeg" alt="Card image cap">
+                <img class="card-img-top mt-2" style="float: left; width: 120px; text-align: right; margin: 5px 130px; display: inline;" 
+                     src="https://d.scdn.gr/images/sku_main_images/004709/4709792/20181008092249_moet_chandon_brut_imperial_leyko_750ml.jpeg" alt="Card image cap">
             </div>
-        <div class="card d-inline-block h-40 m-8" style="float: left; text-align: left; margin: 5px 150px; width: 400px; display: inline; background-color:white; border-color: #a6a6a6;">
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item" style="background-color:#f2f2f2; border-color: #a6a6a6;"><h3 class="card-text" style="text-align: center;">${product.pname}</h3></li>
-                <li class="list-group-item" style="background-color:#f2f2f2; border-color: #a6a6a6;"><p class="card-text">${product.pdescr}</p></li>
-                <li class="list-group-item" style="background-color:#f2f2f2; border-color: #a6a6a6;"><p class="card-text">Variety: ${product.vid.vdescr}</p></li>
-                <li class="list-group-item" style="background-color:#f2f2f2; border-color: #a6a6a6;"><p class="card-text">Colour: ${product.clid.cldescr}</p></li>
-                <li class="list-group-item" style="background-color:#f2f2f2; border-color: #a6a6a6;"><p class="card-text">Country: ${product.cid.cdescr}</p></li>
-                <li class="list-group-item" style="background-color:#f2f2f2; border-color: #a6a6a6;"><p class="card-text">Dryness: ${product.pdryness}</p></li>
-                <li class="list-group-item" style="background-color:#f2f2f2; border-color: #a6a6a6;"><p class="card-text">Alcohol: ${product.palcohol}%</p></li>
-                <li class="list-group-item" style="background-color:#f2f2f2; border-color: #a6a6a6;"><p class="card-text">Year: ${product.pyear}</p></li>
-                <li class="list-group-item" style="background-color:#f2f2f2; border-color: #a6a6a6;"><p class="card-text">Size: ${product.psize}ml</p></li>
-                <li class="list-group-item" style="background-color:#f2f2f2; border-color: #a6a6a6;"><p class="card-text">Price: ${product.pprice} EUR</p></li>
-            </ul>
-            <div class="card-body" style="background-color:#f2f2f2; border-color: #a6a6a6;">
-                <!--                        <a href="#" class="card-link float-right">Buy</a>
-                                        <a href="#" class="card-link float-left">View</a>-->               
-                <button type="button" class="btn btn-primary btn-md float-center btn-block">Buy</button>
-                <a href="<c:url value="/wines"/>" class="btn btn-secondary btn-md float-center btn-block">Back</a>
-            </div>
+            <div class="card d-inline-block h-40 m-8" style="float: left; text-align: left; margin: 5px 150px; width: 400px; display: inline; background-color:white; border-color: #a6a6a6;">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" style="background-color:#f2f2f2; border-color: #a6a6a6;"><h3 class="card-text" style="text-align: center;">${product.pname}</h3></li>
+                    <li class="list-group-item" style="background-color:#f2f2f2; border-color: #a6a6a6;"><p class="card-text">${product.pdescr}</p></li>
+                    <li class="list-group-item" style="background-color:#f2f2f2; border-color: #a6a6a6;"><p class="card-text">Variety: ${product.vid.vdescr}</p></li>
+                    <li class="list-group-item" style="background-color:#f2f2f2; border-color: #a6a6a6;"><p class="card-text">Colour: ${product.clid.cldescr}</p></li>
+                    <li class="list-group-item" style="background-color:#f2f2f2; border-color: #a6a6a6;"><p class="card-text">Country: ${product.cid.cdescr}</p></li>
+                    <li class="list-group-item" style="background-color:#f2f2f2; border-color: #a6a6a6;"><p class="card-text">Dryness: ${product.pdryness}</p></li>
+                    <li class="list-group-item" style="background-color:#f2f2f2; border-color: #a6a6a6;"><p class="card-text">Alcohol: ${product.palcohol}%</p></li>
+                    <li class="list-group-item" style="background-color:#f2f2f2; border-color: #a6a6a6;"><p class="card-text">Year: ${product.pyear}</p></li>
+                    <li class="list-group-item" style="background-color:#f2f2f2; border-color: #a6a6a6;"><p class="card-text">Size: ${product.psize}ml</p></li>
+                    <li class="list-group-item" style="background-color:#f2f2f2; border-color: #a6a6a6;"><p class="card-text">Price: ${product.pprice} EUR</p></li>
+                </ul>
+                <div class="card-body" style="background-color:#f2f2f2; border-color: #a6a6a6;">
+                    <!--                        <a href="#" class="card-link float-right">Buy</a>
+                                            <a href="#" class="card-link float-left">View</a>-->               
+                    <!--                <button type="button" class="btn btn-primary btn-md float-center btn-block">Buy</button>-->
+                    <div class="btn btn-primary btn-md float-center btn-block "id="paypal-button-container"></div>
+                    <a href="<c:url value="/wines"/>" class="btn btn-secondary btn-md float-center btn-block">Back</a>
+                </div>
             </div>
         </div>
         <br>
@@ -88,6 +89,43 @@
         <script src="${pageContext.request.contextPath}/static/js/lightbox.min.js"></script>
         <script src="${pageContext.request.contextPath}/static/js/jquery.countdown.min.js"></script>
         <script src="${pageContext.request.contextPath}/static/js/scripts.js"></script>
+        <script src="https://www.paypal.com/sdk/js?client-id=Af9x9QjflUEBvxzB_THdbNwQu9Xtj5I2YiPkNe8XxLhyLBQn78SLypvdttb_zue06xFGhsgy_a1HItjz&currency=EUR"></script>
+        <script>
+            // Render the PayPal button into #paypal-button-container
+            paypal.Buttons({
+
+                style: {
+                    layout: 'horizontal',
+                    fundingicons: 'false',
+                    tagline: 'false',
+                    size: 'responsive'
+                },
+    //funding: {
+    // allowed: [ paypal.FUNDING.CARD ],
+    // disallowed: [ paypal.FUNDING.CREDIT ]
+    //}
+                // Set up the transaction
+                createOrder: function (data, actions) {
+                    return actions.order.create({
+                        purchase_units: [{
+                                amount: {
+                                    value: '${product.pprice}'
+                                }
+                            }]
+                    });
+                },
+
+                // Finalize the transaction
+                onApprove: function (data, actions) {
+                    return actions.order.capture().then(function (details) {
+                        // Show a success message to the buyer
+                        alert('Transaction completed by ' + details.payer.name.given_name + '!');
+                    });
+                }
+
+
+            }).render('#paypal-button-container');
+        </script>
     </body>
 
 </html>
