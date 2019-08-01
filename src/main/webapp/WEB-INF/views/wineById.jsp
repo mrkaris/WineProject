@@ -45,7 +45,7 @@
         <c:set var="product" value="${product}" />
         <div class="container" >
             <div style="display:inline;">
-                <img class="card-img-top mt-2" style="float: left; width: 120px; text-align: right; margin: 5px 130px; display: inline;" 
+                <img class="card-img-top mt-2" style="float: left; width: 155px; text-align: right; margin: 15px 130px; display: inline;" 
                      src="https://d.scdn.gr/images/sku_main_images/004709/4709792/20181008092249_moet_chandon_brut_imperial_leyko_750ml.jpeg" alt="Card image cap">
             </div>
             <div class="card d-inline-block h-40 m-8" style="float: left; text-align: left; margin: 5px 150px; width: 400px; display: inline; background-color:white; border-color: #a6a6a6;">
@@ -60,6 +60,11 @@
                     <li class="list-group-item" style="background-color:#f2f2f2; border-color: #a6a6a6;"><p class="card-text">Year: ${product.pyear}</p></li>
                     <li class="list-group-item" style="background-color:#f2f2f2; border-color: #a6a6a6;"><p class="card-text">Size: ${product.psize}ml</p></li>
                     <li class="list-group-item" style="background-color:#f2f2f2; border-color: #a6a6a6;"><p class="card-text">Price: ${product.pprice} EUR</p></li>
+                    <li class="list-group-item" style="background-color:#f2f2f2; border-color: #a6a6a6;"><p class="card-text">Quantity: 
+                        <input type="number" id="number" name="number" value="1" min="1" max="20" data-bind="value:replyNumber" />
+                        </p></li>
+                    
+
                 </ul>
                 <div class="card-body" style="background-color:#f2f2f2; border-color: #a6a6a6;">
                     <!--                        <a href="#" class="card-link float-right">Buy</a>
@@ -100,16 +105,18 @@
                     tagline: 'false',
                     size: 'responsive'
                 },
-    //funding: {
-    // allowed: [ paypal.FUNDING.CARD ],
-    // disallowed: [ paypal.FUNDING.CREDIT ]
-    //}
+                //funding: {
+                // allowed: [ paypal.FUNDING.CARD ],
+                // disallowed: [ paypal.FUNDING.CREDIT ]
+                //}
                 // Set up the transaction
                 createOrder: function (data, actions) {
+                    let quantity = document.querySelector("#number").value;
+                    let total = quantity *${product.pprice};
                     return actions.order.create({
                         purchase_units: [{
                                 amount: {
-                                    value: '${product.pprice}'
+                                    value: total
                                 }
                             }]
                     });
