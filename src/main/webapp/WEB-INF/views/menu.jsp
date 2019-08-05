@@ -7,7 +7,7 @@
             <li><a href="${pageContext.request.contextPath}/about" target="_self">About us</a></li>
             <li><a href="${pageContext.request.contextPath}/process" target="_self">Process</a></li>
             <li><a href="${pageContext.request.contextPath}/wines" target="_self">Our wines </a></li>
-            <li><a href="${pageContext.request.contextPath}/contact" target="_self">Contact</a></li>
+            <li><a href="${pageContext.request.contextPath}/chat" target="_self">Chat</a></li>
             <sec:authorize access="hasAnyRole('ADMIN') or hasRole('DBA')">
                 <li><a href="<c:url value='/admin' />" target="_self">Admin</a></li>
             </sec:authorize>            

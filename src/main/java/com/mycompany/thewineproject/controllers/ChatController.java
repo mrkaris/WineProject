@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping("/lala")
+@RequestMapping("/chat")
 public class ChatController {
 
     @MessageMapping("/chat.sendMessage")

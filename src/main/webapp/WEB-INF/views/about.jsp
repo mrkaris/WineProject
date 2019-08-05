@@ -104,4 +104,30 @@
             </div>
         </div>
     </section>
-</div>
+    <section>
+        <div class="main-container">
+            <section class="map">
+                <div class="map-holder" style="margin-left: 5.7%; margin-right:  5.7%; margin-top: 40px;">
+                    <div class="mapouter">
+                        <div class="gmap_canvas">
+                            <iframe width="800" height="600" id="gmap_canvas" src="https://maps.google.com/maps?q=nemea&t=&z=11&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                            <a href="https://www.embedgooglemap.net/blog/best-wordpress-themes/">Winery</a>
+                        </div>
+                        <style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:550px;width:1200px;}
+                        </style>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="contact-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 text-center">
+                            <h1>Have questions? <br>Maybe you want just to try our wines?<br></h1>
+                            <p class="lead">contact@winery.com
+                                <br>+30 27460 00 000<br>
+                                <br>Winery<br>Nemea, 205 00, &nbsp;Greece</p>
+                        </div>
+                        </section>
+                    </div>
