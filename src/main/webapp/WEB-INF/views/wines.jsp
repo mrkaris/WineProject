@@ -51,32 +51,32 @@
 
                     <div class="row">
                         <div class="col-sm-4">
-                            <h6>Nemo enim ipsam voluptatem</h6>
-                            <p>
-                                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
-                                voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
-                                cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id
-                                est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
+                            <h6>Ingredients</h6>
+                            <p>                    
+                                Read the back of the label to get ideas about the wine's flavor, body and potential pairings. 
+                                Most people buy wines based on labels they like, but take things a step further and actually read 
+                                the winemaker's description. They frequently point to the prominent flavors and character of the 
+                                wine, and sometimes suggest food pairings as well. 
                             </p>
                         </div>
 
                         <div class="col-sm-4">
-                            <h6>Dolorem ipsum quia dolor sit amet</h6>
+                            <h6>The flavor</h6>
                             <p>
-                                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
-                                voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
-                                cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id
-                                est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
+                                Consider how strongly flavored or rich the meal is, and match it with a similarly full-bodied wine. 
+                                The idea of "red with meat, white with fish," is far too simple. The more important goal is for the 
+                                wine and meal to complement each other. You don't want either the dish to overpower the taste of 
+                                the wine or vice versa -- they should both have a similar depth. 
                             </p>
                         </div>
 
                         <div class="col-sm-4">
-                            <h6>Fugiat quo voluptas nulla pariatur</h6>
-                            <p>
-                                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
-                                voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
-                                cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id
-                                est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
+                            <h6>The age</h6>
+                            <p>                               
+                                Consider the vintage, or year, when you choose wine, but understand that all wines age differently. 
+                                All wines change, develop, and evolve with age. Every wine ages 
+                                differently, making choosing based on the year a fool's errand unless you're a seasoned pro. 
+                                That said, there are some common traits that all wines take on as they age.
                             </p>
                         </div>
                     </div>
@@ -90,26 +90,23 @@
                             <div class="testimonials-slider text-center">
                                 <ul class="slides">
                                     <li>
-                                        <p class="text-white lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                            minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                            commodo consequat. </p>
+                                        <p class="text-white lead">Just a very quick review to thank you so much for taking 
+                                            the time out to help us better understand the organic wine process and to enjoy the
+                                            truly remarkable wines that you have produced.</p>
                                         <span class="author text-white">John Doe</span>
                                     </li>
 
                                     <li>
-                                        <p class="text-white lead">Nemo enim ipsam voluptatem quia voluptas sit aspernatur
-                                            aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
-                                            voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia
-                                            dolor.</p>
+                                        <p class="text-white lead">Your wines however stand far from the madding crowd and 
+                                            have a great backstory and a passion that can not be ignored. <br>
+                                            Kindest regards</p>
                                         <span class="author text-white">Jessica Marks</span>
                                     </li>
 
                                     <li>
-                                        <p class="text-white lead">Dignissimos ducimus qui blanditiis praesentium voluptatum
-                                            deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
-                                            cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia
-                                            animi, id est laborum et dolorum fuga.</p>
+                                        <p class="text-white lead">We will most certainly be attending the pruning activity in 
+                                            August and look forward very much to spending time with you again and meeting other 
+                                            people with a similar passion.</p>
                                         <span class="author text-white">Steven Hanson</span>
                                     </li>
                                 </ul>
