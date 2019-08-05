@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationTrustResolver;
 import org.springframework.security.authentication.AuthenticationTrustResolverImpl;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -40,6 +39,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
+                .antMatchers("/chat").access("hasRole('ADMIN') or hasRole('DBA') or hasRole('USER')")
                 .antMatchers("/product/country/{cid}","/product/colour/{clid}","/product/variety/{vid}").permitAll()
                 .antMatchers("/product/view/{id}").permitAll()
                 .antMatchers("/country/**", "/variety/**", "/colour/**", "/product/**")
