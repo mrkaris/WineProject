@@ -70,7 +70,7 @@
                     <!--                        <a href="#" class="card-link float-right">Buy</a>
                                             <a href="#" class="card-link float-left">View</a>-->               
                     <!--                <button type="button" class="btn btn-primary btn-md float-center btn-block">Buy</button>-->
-                    <div class="btn btn-primary btn-md float-center btn-block "id="paypal-button-container"></div>
+                    <div class=" btn-primary10 btn-md float-center btn-block "id="paypal-button-container"></div>
                     <a href="<c:url value="/wines"/>" class="btn btn-secondary btn-md float-center btn-block">Back</a>
                 </div>
             </div>

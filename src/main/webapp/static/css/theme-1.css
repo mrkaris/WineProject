@@ -341,6 +341,25 @@ section:nth-of-type(even) {
     transition: all .3s ease;
     min-width: 155px;
 }
+
+.btn-primary10:hover{
+    background: #FFCC10;
+    color: #fff;
+    border-color: #ca293e;
+    background-color: #FFCC10;
+}
+
+.btn-primary10 {
+    background-color:#FFCC10;
+    display: inline-block;
+    line-height: 1;
+    font-family: "Raleway", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: #FFCC10;;
+}
+
 .btn:hover {
     background: none;
     color: #fff;
@@ -2242,7 +2261,14 @@ blockquote {
 .form-contact input {
     border-bottom: 2px solid rgba(0, 0, 0, 0.2);
 }
-.form-success,
+.form-success{
+    width: 100%;
+    padding: 12px;
+    display: none;
+    margin-top: 12px;
+    color: #fff;
+}
+
 .form-error {
     width: 100%;
     padding: 12px;
@@ -2254,7 +2280,7 @@ blockquote {
     background-color: #58b551;
 }
 .form-error {
-    background-color: #d94947;
+    /*background-color: #d94947;*/
 }
 .field-error {
     box-shadow: inset 0px 0px 10px -2px #ff0000 !important;
