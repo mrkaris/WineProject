@@ -35,8 +35,7 @@
                     <div class="card-body" style="background-color:#f2f2f2; border-color: #a6a6a6;">
                         <!--                        <a href="#" class="card-link float-right">Buy</a>
                                                 <a href="#" class="card-link float-left">View</a>-->               
-                        <a href="<c:url value="/product/view/${item.pid}"/>" class="btn btn-primary btn-md float-center btn-block">View</a>
-                        <button type="button" class="btn btn-secondary btn-md float-center btn-block">Buy</button>
+                        <a href="<c:url value="/product/view/${item.pid}"/>" class="btn btn-primary btn-md float-center btn-block">Buy</a>
 
                     </div>
                 </div>
