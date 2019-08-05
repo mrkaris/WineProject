@@ -30,8 +30,8 @@ public class ChatController {
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public String chat() {
-//        model.addAttribute("loggedinuser", getPrincipal());
+    public String chat(ModelMap model) {
+        model.addAttribute("loggedinuser", getPrincipal());
         return "chat";
     }
 
