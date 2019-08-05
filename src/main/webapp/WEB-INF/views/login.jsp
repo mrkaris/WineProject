@@ -75,8 +75,8 @@
                                     <br>
                                     <input type="submit"
                                            class="btn btn-block btn-primary btn-default" value="Log in"> or 
-                                    <a href="<c:url value='/newuser' />">Create Account</a>
-                                </div>
+                                    <a href="<c:url value='/newuser' />">Create Account</a> 
+                                </div>                                
                             </form>
                         </div>
                     </div>

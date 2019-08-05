@@ -46,7 +46,7 @@
         <div class="container" >
             <div style="display:inline;">
                 <img class="card-img-top mt-2" style="float: left; width: 155px; text-align: right; margin: 15px 130px; display: inline;" 
-                     src="https://d.scdn.gr/images/sku_main_images/004709/4709792/20181008092249_moet_chandon_brut_imperial_leyko_750ml.jpeg" alt="Card image cap">
+                     src="${product.image}" alt="Card image cap">
             </div>
             <div class="card d-inline-block h-40 m-8" style="float: left; text-align: left; margin: 5px 150px; width: 400px; display: inline; background-color:white; border-color: #a6a6a6;">
                 <ul class="list-group list-group-flush">

@@ -21,14 +21,14 @@
             <%@include file="filters.jsp" %>
             <c:forEach items="${products}" var="item">
                 <div class="card d-inline-block h-50 m-4" style="width: 24.5rem; background-color:white; border-color: #a6a6a6;">
-                    <img class="card-img-top mt-2" style="display: block; margin-left: auto; margin-right: auto; width: 18%;" 
-                         src="https://d.scdn.gr/images/sku_main_images/004709/4709792/20181008092249_moet_chandon_brut_imperial_leyko_750ml.jpeg" alt="Card image cap">
+                    <img class="card-img-top mt-2" style="display: block; margin-left: auto; margin-right: auto; width: 22%; height: 17vw; object-fit: cover;" 
+                         src="${item.image}" alt="Card image cap">
                     <div class="card-body">
                         <h3 class="card-title font-weight-bold align-vertical" style="font-family: '${item.pname}', 
                             serif;font-style: italic;font-weight: 400;">${item.pname}</h3>
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item" style="background-color:#f2f2f2; border-color: #a6a6a6;"><p class="card-text">${item.vid.vdescr}</p></li>
+                        <li class="list-group-item" style="background-color:#f2f2f2; border-color: #a6a6a6;"><p class="card-text">Variety: ${item.vid.vdescr}</p></li>
                         <li class="list-group-item " style="background-color:#f2f2f2; border-color: #a6a6a6;"><p class="card-text">Colour: ${item.clid.cldescr}</p></li>
                         <li class="list-group-item" style="background-color:#f2f2f2; border-color: #a6a6a6;"><p class="card-text">Price: ${item.pprice} EUR</p></li>
                     </ul>
