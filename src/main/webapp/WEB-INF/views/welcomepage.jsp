@@ -17,7 +17,7 @@
                     </c:when>
                     <c:otherwise>
                         <a target="_self" href="chat" class="btn btn-primary btn-white inner-link">Join our Chat</a>
-                        <a href="wines" class="btn btn-primary btn-filled inner-link" target="_self">View our Wines</a> 
+                        <a href="wines" class="btn btn-primary btn-filled inner-link" target="_self">Check out our Wines</a> 
                     </c:otherwise>
                 </c:choose>
             </div>
