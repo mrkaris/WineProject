@@ -73,10 +73,10 @@
                             <div class="col-md-7">
                                 <c:choose>
                                     <c:when test="${edit}">
-                                        <form:input type="text" path="ssoId" id="ssoId" class="form-control input-sm" readonly="true"/>
+                                        <form:input type="email" path="ssoId" id="ssoId" class="form-control input-sm" readonly="true"/>
                                     </c:when>
                                     <c:otherwise>
-                                        <form:input type="text" path="ssoId" id="ssoId" class="form-control input-sm" />
+                                        <form:input type="email" path="ssoId" id="ssoId" class="form-control input-sm" />
                                         <div class="has-error">
                                             <form:errors path="ssoId" class="help-inline"/>
                                         </div>
