@@ -13,9 +13,11 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 @Controller
 @RequestMapping("/country")
+@SessionAttributes("roles")
 public class CountryController {
 
     @Autowired
@@ -25,6 +27,7 @@ public class CountryController {
     public String findAllCountries(ModelMap model) {
         List<Country> countries = service.findAllCountries();
         model.addAttribute("countries", countries);
+        model.addAttribute("loggedinuser", getPrincipal());
         return "viewcountries";
     }
 
@@ -32,6 +35,7 @@ public class CountryController {
     public String findById(ModelMap model, @PathVariable("id") int id) {
         Country c = service.findById(id);
         model.addAttribute("country", c);
+        model.addAttribute("loggedinuser", getPrincipal());
         return "";
     }
 
@@ -39,6 +43,7 @@ public class CountryController {
     public String insertForm(ModelMap model) {
         Country country = new Country();
         model.addAttribute("country", country);
+        model.addAttribute("loggedinuser", getPrincipal());
         return "registercountry";
     }
 
@@ -66,6 +71,7 @@ public class CountryController {
     public String updateById(ModelMap model, @PathVariable("id") int id) {
         model.addAttribute("country", service.findById(id));
         model.addAttribute("edit", true);
+        model.addAttribute("loggedinuser", getPrincipal());
         return "registercountry";
     }
 
