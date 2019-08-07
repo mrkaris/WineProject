@@ -13,9 +13,11 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 @Controller
 @RequestMapping("/colour")
+@SessionAttributes("roles")
 public class ColourController {
 
     @Autowired
@@ -25,6 +27,7 @@ public class ColourController {
     public String findAllColours(ModelMap model) {
         List<Colour> colours = service.findAllColours();
         model.addAttribute("colours", colours);
+        model.addAttribute("loggedinuser", getPrincipal());
         return "viewcolours";
     }
 
@@ -32,6 +35,7 @@ public class ColourController {
     public String findById(ModelMap model, @PathVariable("id") int id) {
         Colour c = service.findById(id);
         model.addAttribute("colour", c);
+        model.addAttribute("loggedinuser", getPrincipal());
         return "";
     }
 
@@ -39,6 +43,7 @@ public class ColourController {
     public String insertForm(ModelMap model) {
         Colour colour = new Colour();
         model.addAttribute("colour", colour);
+        model.addAttribute("loggedinuser", getPrincipal());
         return "registercolour";
     }
 
@@ -65,6 +70,7 @@ public class ColourController {
     public String updateById(ModelMap model, @PathVariable("id") int id) {
         model.addAttribute("colour", service.findById(id));
         model.addAttribute("edit", true);
+        model.addAttribute("loggedinuser", getPrincipal());
         return "registercolour";
     }
 

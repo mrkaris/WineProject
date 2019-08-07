@@ -155,7 +155,7 @@
             </div>
         </div>
 
-    <div style="position: absolute; bottom: 0; width: 100%; height: 2.5rem; "><%@include file="footer.jsp" %>
+    <div style="position: relative; bottom: 0; width: 100%; height: 2.5rem; "><%@include file="footer.jsp" %>
     </div>
 
         <script src="https://www.youtube.com/iframe_api"></script>

@@ -13,9 +13,11 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 @Controller
 @RequestMapping("/variety")
+@SessionAttributes("roles")
 public class VarietyController {
 
     @Autowired
@@ -25,6 +27,7 @@ public class VarietyController {
     public String findAllVarieties(ModelMap model) {
         List<Variety> varieties = service.findAllVarieties();
         model.addAttribute("varieties", varieties);
+        model.addAttribute("loggedinuser", getPrincipal());
         return "viewvarieties";
     }
 
@@ -32,6 +35,7 @@ public class VarietyController {
     public String findById(ModelMap model, @PathVariable("id") int id) {
         Variety v = service.findById(id);
         model.addAttribute("variety", v);
+        model.addAttribute("loggedinuser", getPrincipal());
         return "";
     }
 
@@ -39,6 +43,7 @@ public class VarietyController {
     public String insertForm(ModelMap model) {
         Variety variety = new Variety();
         model.addAttribute("variety", variety);
+        model.addAttribute("loggedinuser", getPrincipal());
         return "registervariety";
     }
 
@@ -65,6 +70,7 @@ public class VarietyController {
     public String updateById(ModelMap model, @PathVariable("id") int id) {
         model.addAttribute("variety", service.findById(id));
         model.addAttribute("edit", true);
+        model.addAttribute("loggedinuser", getPrincipal());
         return "registervariety";
     }
 
