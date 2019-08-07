@@ -50,6 +50,7 @@ public class ProductController {
     public String findById(ModelMap model, @PathVariable("id") int id) {
         Product p = service.findById(id);
         model.addAttribute("product", p);
+        model.addAttribute("loggedinuser", getPrincipal());
         return "wineById";
     }
 
